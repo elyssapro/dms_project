@@ -1,4 +1,3 @@
-alert('Hello')
 window.onscroll = function() {myFunction()};
         
     var navbar = document.querySelector(".header-section");
