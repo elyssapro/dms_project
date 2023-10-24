@@ -17,7 +17,8 @@ const PORT = 5000 || process.env.PORT_NUMBER;
  * Middleware and static files
  */
 
-app.use(express.static('Public'));
+app.use(expressLayout);
+app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -26,7 +27,7 @@ app.use(express.json());
  * Applicaction layouts middlewares
  */
 
-app.set('layout', './layouts/Home_one/home_one');
+app.set('layout', './Layouts/Home/home');
 app.set('view engine', 'ejs');
 
 
@@ -34,10 +35,7 @@ app.set('view engine', 'ejs');
  * App routes
  */
 
-app.get('/', (req, res) => {
-    res.send('Hello developers');
-})
-
+app.use('/', require('./Server/Routes/Home/home'));
 
 /**
  * Listening to the application
