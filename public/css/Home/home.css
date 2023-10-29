@@ -8,11 +8,11 @@ body{
 
 /* ---------------------------- HEADER SECTION ------------------- */
 
-.dms-header {
+/* .dms-header {
     background-color: white;
     padding: 100px;
     text-align: center;
-  }
+  } */
 
   .sticky {
     position: fixed;
@@ -76,12 +76,13 @@ main .header-section{
 
 main .body-section{
     width: 100%;
-    height: 2000px;
+    height: 2300px;
     display: grid;
     gap: 10px;
     grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-4] minmax(300px, 250px) [col-end];
-    grid-template-rows: minmax(400px, 450px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(260px, 300px) minmax(30px, 60px) minmax(350px, 400px) minmax(350px, 400px) auto;
-    grid-template-areas: 
+    grid-template-rows: minmax(200px, 250px) minmax(1000px, 1050px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(260px, 300px) minmax(30px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(450px, 500px) auto;
+    grid-template-areas:
+    'small-cont small-cont small-cont small-cont' 
     'photo-content photo-content photo-content photo-content'
     'after-photo after-photo after-photo after-photo'
     'about-one about-one about-two about-two'
@@ -90,6 +91,8 @@ main .body-section{
     'mission-one mission-one mission-one mission-one'
     'after-mission after-mission after-mission after-mission'
     'contact-us contact-us contact-us partenership'
+    'vertical-content vertical-content vertical-content vertical-content'
+    'many-ver many-ver many-ver many-ver'
     'main-footer main-footer main-footer main-footer'
 
 }
@@ -98,12 +101,28 @@ main .body-section{
     width: 100%;
 }
 
+.small-content{
+  width: 100%;
+  grid-area: small-cont;
+  display: grid;
+  padding: 10px;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.cont-{
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 3px 6px 2px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
 .main-container-photo{
     grid-area: photo-content;
-    background-image: url('nature.png');
+    /* background-image: url('/img/master2.png'); */
     background-repeat: no-repeat;
     background-size: cover;
-    object-fit: contain;
+    object-fit: cover;
     z-index: -99;
 }
 
@@ -234,6 +253,38 @@ main .body-section{
   .partenership .swiper-slide img {
     display: block;
     width: 100%;
+  }
+
+  .vertical-content{
+    /* background-color: rgba(66, 90, 90, 0.644); */
+    padding: 5px;
+    grid-area: vertical-content;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 10px;
+    display: grid;
+    width: 100%;
+  }
+
+  .vertical-cont{
+    width: 100%;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+  }
+
+  .many-vertical{
+    grid-area: many-ver;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .many-vert{
+    width: 100%;
+    box-shadow: 1px 3px 6px 2px rgba(0,0,0,0.2);
+    border-radius: 4px;
   }
 
   .main-footer{
