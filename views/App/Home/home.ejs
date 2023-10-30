@@ -4,13 +4,21 @@
     </div> -->
 
     <!----------------------- Header section ----------->
+    <div class="search-panel">
+      <div class="search-content">
+        <form>
+          <input type="text" placeholder="Search here..." class="search-input">
+          <button>Search</button>
+        </form>
+      </div>
+    </div>
     <section class="header-section">
         <div class="header-grid">
             <span class="header-logo"><i class="fa-solid fa-school fa-2xl" style="color: #476fb3;"></i><h1></h1></span>
         </div>
 
         <div class="header-grid nav-links">
-            <span class="link-content">
+            <span class="link-content" onclick="openSearchPanel()">
                 <i class="fa-solid fa-magnifying-glass" style="color: #6084c3;"></i>
                 Search
             </span>
@@ -26,7 +34,7 @@
             </span>
 
             <span class="link-content">
-                <i class="fa-solid fa-phone fa-beat" style="color: #6084c3;"></i>
+                <i class="fa-solid fa-phone" style="color: #6084c3;"></i>
                 Contact Us
             </span>
 
@@ -52,7 +60,41 @@
         <div class="cont-"></div>
       </div>
         <div class="body-grid main-container-photo">
-          <img src="/img/animatrice.png" alt="" width="100%" height="100%">
+          <div class="body-photo body-first-content">
+            <div class="first-content"></div>
+            <div class="first-content"></div>
+          </div>
+          <div class="body-photo main-photo">
+
+            <p></p>
+
+            <!-- <div class="swiper mySwiperautoplay">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/img/animatrice.png" alt="" width="100%" height="100%">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/img/master.png" alt="" width="100%" height="100%">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/img/master2.png" alt="" width="100%" height="100%">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/img/animatrice.png" alt="" width="100%" height="100%">
+                </div>
+
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+              </div>
+            </div> -->
+          </div>
         </div>
         <div class="body-grid after-photo-title">
             <h2>About Us</h2>
@@ -65,35 +107,40 @@
         <div class="body-grid about-five"></div>
         <div class="body-grid about-six"></div>
         <div class="body-grid after-about">
-            <h2>Our Missions</h2>
+            <h2>Why you need DMS</h2>
         </div>
+
 
         <div class="body-grid about-mission-one">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <h3 class="mission-header">Mission One</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptate aperiam corporis facere nobis dolores! Pariatur iusto beatae incidunt quia animi provident, ab cum ipsum.</p>
+                    <h3 class="mission-header">Incident Reporting</h3>
+                    <p>Teachers and staff can submit incident reports electronically, making it easier to keep a detailed record of disciplinary issues and provide administrators with timely information.</p>
                   </div>
                   <div class="swiper-slide">
-                    <h3 class="mission-header">Mission Two</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptate aperiam corporis facere nobis dolores! Pariatur iusto beatae incidunt quia animi provident, ab cum ipsum.</p>
+                    <h3 class="mission-header">Communication and Alerts</h3>
+                    <p>DMS often include features for sending notifications and alerts to parents, teachers, and administrators regarding disciplinary incidents. This ensures that all stakeholders are aware of the situation.</p>
                   </div>
                   <div class="swiper-slide">
-                    <h3 class="mission-header">Mission Three</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptate aperiam corporis facere nobis dolores! Pariatur iusto beatae incidunt quia animi provident, ab cum ipsum.</p>
+                    <h3 class="mission-header">Data Analysis and Reporting</h3>
+                    <p>DMS can analyze discipline data over time to identify trends and patterns in student behavior. This helps schools make informed decisions and implement preventive measures.</p>
                   </div>
                   <div class="swiper-slide">
-                    <h3 class="mission-header">Mission Four</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptate aperiam corporis facere nobis dolores! Pariatur iusto beatae incidunt quia animi provident, ab cum ipsum.</p>
+                    <h3 class="mission-header">Intervention Planning</h3>
+                    <p>DMS assist in creating intervention plans for students who repeatedly engage in misbehavior. These plans may include counseling, mentoring, or additional support to address the root causes of the behavior.</p>
                   </div>
                   <div class="swiper-slide">
-                    <h3 class="mission-header">Mission Five</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptate aperiam corporis facere nobis dolores! Pariatur iusto beatae incidunt quia animi provident, ab cum ipsum.</p>
+                    <h3 class="mission-header">Documentation and Accountability</h3>
+                    <p>DMS help in maintaining a detailed and standardized record of disciplinary actions taken, ensuring transparency and accountability in the disciplinary process.</p>
                   </div>
                   <div class="swiper-slide">
-                    <h3 class="mission-header">Mission Six</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptate aperiam corporis facere nobis dolores! Pariatur iusto beatae incidunt quia animi provident, ab cum ipsum.</p>
+                    <h3 class="mission-header">Parental Involvement</h3>
+                    <p>They enable better communication with parents or guardians, allowing them to be informed about their child's behavior and any actions taken by the school to address it.</p>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="mission-header">Legal Compliance</h3>
+                    <p>Some systems help schools adhere to legal requirements by ensuring that disciplinary actions are in compliance with state and federal laws.</p>
                   </div>
                 </div>
                 <!-- <div class="swiper-button-next"></div>
@@ -130,10 +177,12 @@
         </div>
 
         <div class="body-grid vertical-content">
-          <div class="vertical-cont"></div>
-          <div class="vertical-cont"></div>
-          <div class="vertical-cont"></div>
-          <div class="vertical-cont"></div>
+          <div class="vertical-cont">
+            <h2>Your school before DMS</h2>
+          </div>
+          <div class="vertical-cont">
+            <h2>Your school after DMS</h2>
+          </div>
           <!-- <div class="vertical-cont"></div> -->
         </div>
 
@@ -152,17 +201,17 @@
           <div class="footer-content second-footer">
             <div class="main-FQA">
               <h2>Frequently Asked Question (FQA)</h2>
-            <p>System requirements <span>></span></p>
-            <p>Where can I learn more about how to get started? <span>></span></p>
-            <p>Is this system available for mobile users? <span>></span></p>
-            <p>What about the version of IOS? <span>></span></p>
-            <p>Will I automatically be charged when my trial ends? <span>></span></p>
+            <p class="fqa">System requirements <span>></span></p>
+            <p class="fqa">Where can I learn more about how to get started? <span>></span></p>
+            <p class="fqa">Is this system available for mobile users? <span>></span></p>
+            <p class="fqa">What about the version of IOS? <span>></span></p>
+            <p class="fqa">Will I automatically be charged when my trial ends? <span>></span></p>
             </div>
           </div>
           <div class="footer-content third-footer">
             <div class="main-FOLLOW">
               <h2>Follow Us</h2>
-              <p><i class="fa-brands fa-facebook"></i> Facebook: <span style="text-decoration: underline;">Ihope Dvelopment</span></p>
+              <p><i class="fa-brands fa-facebook"></i> Facebook: <span style="text-decoration: underline;">Ihope Development</span></p>
               <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: <span style="text-decoration: underline;">+250 788203948</span></p>
               <p><i class="fa-brands fa-instagram"></i> Instagram: <span style="text-decoration: underline;">i_hope201</span></p>
               <p><i class="fa-brands fa-twitter"></i> Twitter: <span style="text-decoration: underline;">Ihope</span></p>

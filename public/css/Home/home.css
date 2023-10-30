@@ -4,6 +4,7 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #6084c318;
 }
 
 /* ---------------------------- HEADER SECTION ------------------- */
@@ -13,6 +14,64 @@ body{
     padding: 100px;
     text-align: center;
   } */
+
+  .search-panel{
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    display: none;
+    /* background-color: #6084c33d; */
+  }
+
+  .search-content{
+    position: relative;
+    min-width: 350px;
+    width: 70%;
+    margin: auto;
+    padding: 0px;
+    z-index: 99;
+    /* background-color: #6084c318; */
+    background-color: white;
+    animation: animate-search-container .2s ease forwards;
+    top: -100px;
+  }
+
+  @keyframes animate-search-container{
+    0%{opacity: 0;}
+    100%{transform: translateY(100px); opacity: 1;}
+  }
+
+  .search-content form{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .search-content form input{
+    width: 85%;
+    padding: 10px 20px 10px 10px;
+    font-size: 20px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    /* transition: .4s ease; */
+    z-index: 99;
+    text-transform: capitalize;
+  }
+
+  .search-content form input:focus{
+    border: none;
+    outline: 3px solid #6084c3;
+    color: #6084c3;
+  }
+
+  .search-content form button{
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    background-color: #6084c3;
+    color: white;
+    cursor: pointer;
+  }
 
   .sticky {
     position: fixed;
@@ -67,7 +126,12 @@ main .header-section{
     margin-right: 20px;
     color: #6084c3;
     cursor: pointer;
+    transition: .2s ease;
 }
+/* 
+.link-content:hover{
+  transform: scale(1.1);
+} */
 
 
 
@@ -80,7 +144,7 @@ main .body-section{
     display: grid;
     gap: 10px;
     grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-4] minmax(300px, 250px) [col-end];
-    grid-template-rows: minmax(200px, 250px) minmax(1000px, 1050px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(260px, 300px) minmax(30px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(450px, 500px) auto;
+    grid-template-rows: minmax(200px, 250px) minmax(650px, 650px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(260px, 300px) minmax(50px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(450px, 500px) auto;
     grid-template-areas:
     'small-cont small-cont small-cont small-cont' 
     'photo-content photo-content photo-content photo-content'
@@ -119,14 +183,85 @@ main .body-section{
 
 .main-container-photo{
     grid-area: photo-content;
-    /* background-image: url('/img/master2.png'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    z-index: -99;
+    display: grid;
+    grid-template-columns: [col-start] minmax(200px, 2fr) [col-2] minmax(300px, 3fr) [col-end];
+    grid-template-rows: 650px;
+    gap: 10px;
+}
+
+.body-first-content{
+  padding-left: 5px;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  gap: 10px;
+}
+
+.first-content{
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+}
+
+  .main-photo{
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  }
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
 
+
+.swiper-slide {
+  text-align: center;
+  /* font-size: 18px; */
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+/* .autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+} */
+/* 
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+ */
 
 .after-photo-title{
     /* background-color: lightslategray; */
@@ -138,34 +273,40 @@ main .body-section{
 
 .about-one{
     grid-area: about-one;
-    background-color: rgb(168, 153, 153);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 
 .about-two{
     grid-area: about-two;
-    background-color: rgb(168, 153, 153);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 
 .about-three{
     grid-area: about-three;
-    background-color: rgb(168, 153, 153);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 .about-four{
     grid-area: about-four;
-    background-color: rgb(168, 153, 153);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 .about-five{
     grid-area: about-five;
-    background-color: rgb(168, 153, 153);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 .about-six{
     grid-area: about-six;
-    background-color: rgb(168, 153, 153);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 
@@ -196,19 +337,13 @@ main .body-section{
     align-items: center;
     z-index: 1;
     padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
 }
 
 .mission-header{
     text-align: center;
 }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
 
   .after-mission{
     grid-area: after-mission;
@@ -269,7 +404,8 @@ main .body-section{
     width: 100%;
     border-radius: 4px;
     background-color: white;
-    box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 4px 8px 2px rgba(0,0,0,0.2);
+    padding: 10px;
   }
 
   .many-vertical{
@@ -285,6 +421,13 @@ main .body-section{
     width: 100%;
     box-shadow: 1px 3px 6px 2px rgba(0,0,0,0.2);
     border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .vertical-cont h2{
+    margin-top: 1px;
+    text-align: center;
   }
 
   .main-footer{
@@ -334,6 +477,15 @@ main .body-section{
     font-size: 16px;
     color: rgb(5, 32, 63);
     margin-bottom: 40px;
+  }
+
+  .fqa{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
   }
 
 
