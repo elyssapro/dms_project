@@ -4,149 +4,31 @@
     </div> -->
 
     <!----------------------- Header section ----------->
-    <div class="search-panel">
-      <div class="search-content">
-        <form>
-          <input type="text" placeholder="Search here..." class="search-input">
-          <button>Search</button>
-        </form>
-      </div>
-    </div>
-    <section class="header-section">
-        <div class="header-grid">
-            <span class="header-logo"><i class="fa-solid fa-school fa-2xl" style="color: #476fb3;"></i><h1></h1></span>
-        </div>
-
-        <div class="header-grid nav-links">
-            <span class="link-content" onclick="openSearchPanel()">
-                <i class="fa-solid fa-magnifying-glass" style="color: #6084c3;"></i>
-                Search
-            </span>
-
-            <span class="link-content">
-                <i class="fa-sharp fa-solid fa-circle-info" style="color: #6084c3;"></i>
-                About Us
-            </span>
-
-            <span class="link-content">
-                <i class="fa-solid fa-bullseye" style="color: #6084c3;"></i>
-                Mission
-            </span>
-
-            <span class="link-content">
-                <i class="fa-solid fa-phone" style="color: #6084c3;"></i>
-                Contact Us
-            </span>
-
-            <span class="link-content">
-                <i class="fa-solid fa-user" style="color: #6084c3;"></i>
-                Account
-            </span>
-
-            <span class="link-content">
-                <i class="fa-regular fa-circle-question" style="color: #6084c3;"></i>
-                Help
-            </span>
-        </div>
-    </section>
+    <%- include('../../Partials/App/Home/Header/search.ejs') %>
+    
+    <%- include('../../Partials/App/Home/Header/nav.ejs') %>
 
     <!----------------------- Body section -------------------->
 
     <section class="body-section">
-      <div class="body-grid small-content">
-        <div class="cont-"></div>
-        <div class="cont-"></div>
-        <div class="cont-"></div>
-        <div class="cont-"></div>
-      </div>
+      <%- include('../../Partials/App/Home/Body/Top/interactive-content.ejs') %>
+
         <div class="body-grid main-container-photo">
-          <div class="body-photo body-first-content">
-            <div class="first-content"></div>
-            <div class="first-content"></div>
-          </div>
-          <div class="body-photo main-photo">
-
-            <p></p>
-
-            <!-- <div class="swiper mySwiperautoplay">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="/img/animatrice.png" alt="" width="100%" height="100%">
-                </div>
-                <div class="swiper-slide">
-                  <img src="/img/master.png" alt="" width="100%" height="100%">
-                </div>
-                <div class="swiper-slide">
-                  <img src="/img/master2.png" alt="" width="100%" height="100%">
-                </div>
-                <div class="swiper-slide">
-                  <img src="/img/animatrice.png" alt="" width="100%" height="100%">
-                </div>
-
-              </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-              <div class="autoplay-progress">
-                <svg viewBox="0 0 48 48">
-                  <circle cx="24" cy="24" r="20"></circle>
-                </svg>
-                <span></span>
-              </div>
-            </div> -->
-          </div>
+          <%- include('../../Partials/App/Home/Body/Top/introduction-content.ejs') %>
         </div>
         <div class="body-grid after-photo-title">
             <h2>About Us</h2>
         </div>
-        <div class="body-grid"></div>
-        <div class="body-grid about-one"></div>
-        <div class="body-grid about-two"></div>
-        <div class="body-grid about-three"></div>
-        <div class="body-grid about-four"></div>
-        <div class="body-grid about-five"></div>
-        <div class="body-grid about-six"></div>
+        <!-- <div class="body-grid"></div> -->
+        <%- include('../../Partials/App/Home/Body/Middle/about-us.ejs') %>
+        
         <div class="body-grid after-about">
             <h2>Why you need DMS</h2>
         </div>
 
 
         <div class="body-grid about-mission-one">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Incident Reporting</h3>
-                    <p>Teachers and staff can submit incident reports electronically, making it easier to keep a detailed record of disciplinary issues and provide administrators with timely information.</p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Communication and Alerts</h3>
-                    <p>DMS often include features for sending notifications and alerts to parents, teachers, and administrators regarding disciplinary incidents. This ensures that all stakeholders are aware of the situation.</p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Data Analysis and Reporting</h3>
-                    <p>DMS can analyze discipline data over time to identify trends and patterns in student behavior. This helps schools make informed decisions and implement preventive measures.</p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Intervention Planning</h3>
-                    <p>DMS assist in creating intervention plans for students who repeatedly engage in misbehavior. These plans may include counseling, mentoring, or additional support to address the root causes of the behavior.</p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Documentation and Accountability</h3>
-                    <p>DMS help in maintaining a detailed and standardized record of disciplinary actions taken, ensuring transparency and accountability in the disciplinary process.</p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Parental Involvement</h3>
-                    <p>They enable better communication with parents or guardians, allowing them to be informed about their child's behavior and any actions taken by the school to address it.</p>
-                  </div>
-                  <div class="swiper-slide">
-                    <h3 class="mission-header">Legal Compliance</h3>
-                    <p>Some systems help schools adhere to legal requirements by ensuring that disciplinary actions are in compliance with state and federal laws.</p>
-                  </div>
-                </div>
-                <!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div> -->
-                <div class="swiper-pagination"></div>
-            </div>
+            <%- include('../../Partials/App/Home/Body/Middle/system.ejs') %>
         </div>
 
         <div class="body-grid after-mission">
@@ -196,6 +78,32 @@
           <div class="many-vert"></div>
           <div class="many-vert"></div>
         </div>
+
+        <div class="grid-body testimony">
+
+
+          <div class="test-grid"></div>
+  
+          <template id="test-template">
+            <div class="test-container">
+              <div class="test-header">
+                <img class="test-header-img skeleton" src="https://source.unsplash.com/100x100/?nature" />
+                <div class="test-title" data-title>
+                  <div class="test-message test-message-text"></div>
+                  <div class="test-message test-message-text"></div>
+                </div>
+              </div>
+              <div data-body>
+                <div class="test-message test-message-text"></div>
+                <div class="test-message test-message-text"></div>
+                <div class="test-message test-message-text"></div>
+                <div class="test-message test-message-text"></div>
+              </div>
+            </div>
+          </template>
+
+        </div>
+
         <div class="body-grid main-footer">
           <div class="footer-content first-footer"></div>
           <div class="footer-content second-footer">
@@ -229,55 +137,3 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        window.onscroll = function() {myFunction()};
-        
-        var navbar = document.querySelector(".header-section");
-        var sticky = navbar.offsetTop;
-        
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } else {
-            navbar.classList.remove("sticky");
-          }
-        }
-
-
-        var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          centeredSlides: true,
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-        });
-
-        var swiper_cube = new Swiper(".mySwipercube", {
-          effect: "cube",
-          grabCursor: true,
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
-          cubeEffect: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-          },
-        });
-        
-        </script>
