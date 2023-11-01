@@ -144,26 +144,89 @@ main .body-section{
 .school-panel{
     width: 100%;
     border-radius: 6px;
-    background-color: white;
-    box-shadow: rgba(0,0,0,0.1) 0px 4px 8px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
-}
-
-.main-key-school{
-    background-color: #bbb;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.school-panel img{
-    border-radius: 6px;
+    /* background-color: white; */
 }
 
 .school-description{
-    padding: 10px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: minmax(200px, 2fr) minmax(350px, 4fr);
 }
 
-.school-description h2{
-    margin-top: 1px;
+.school-info{
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.1) 0px 4px 8px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
+  border-radius: 4px;
+}
+
+.school-admin-info{
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr);
+  grid-template-rows: minmax(30px, 50px) minmax(70px, 3fr) minmax(40px, 2fr);
+}
+
+.school-main-info{
+  width: 100%;
+  /* border: 1px solid; */
+}
+
+.school-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.school-title h2{
+  color: #6084c3;
+}
+.school-body{
+  padding: 0px 10px;
+}
+
+/* .school-body p{
+  margin-top: 1px;
+} */
+
+.school-footer{
+  padding: 0px 10px;
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-start; */
+}
+
+.school-footer p{
+  margin-top: 1px;
+}
+.school-main-footer{
+  display: grid;  
+  grid-template-columns: minmax(300px, 1fr);
+  grid-template-rows: minmax(350px, 2fr) minmax(auto, 1fr);
+}
+
+.footer-content{
+  width: 100%;
+  padding: 0px 10px;
+  overflow: auto;
+}
+
+.footer-footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-footer button{
+  padding: 8px 30px;
+  background-color: #6084c3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.school-panel img{
+    border-radius: 6px;
 }
 
 .result-container{
@@ -174,18 +237,3 @@ main .body-section{
     box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
     background-color: white;
 }
-
-.result-container h2{
-    color: #6084c3;
-    margin-right: 1rem;
-}
-
-.result-for-school{
-    text-decoration: underline;
-}
-
-.result-total{
-    color: #6084c3;
-    float: right;
-}
-
