@@ -165,6 +165,7 @@ main .body-section{
   display: grid;
   grid-template-columns: minmax(300px, 1fr);
   grid-template-rows: minmax(30px, 50px) minmax(70px, 3fr) minmax(40px, 2fr);
+  background-color: white;
 }
 
 .school-main-info{
