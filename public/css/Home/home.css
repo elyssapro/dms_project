@@ -256,6 +256,28 @@ main .body-section{
   box-shadow: rgba(0,0,0,0.1) 0px 4px 6px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
 }
 
+.dms-description{
+  overflow: hidden;
+  padding: 10px;
+}
+
+.dms-introduction{
+  text-transform: capitalize;
+  margin-top: 1px;
+  background: linear-gradient(135deg,#6084c3, #ff00d2, #6084c3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: animate-dms-introduction 2s ease-in-out infinite;
+}
+
+@keyframes animate-dms-introduction{
+  0%{background-position: 0% 50%}
+  50%{background-position: 100% 50%}
+  100%{background-position: 0% 50%}
+}
+
   .main-photo{
     background-color: white;
     border-radius: 4px;
@@ -328,12 +350,19 @@ main .body-section{
     height: 100%;
   }
 
-.swiper-slide {
+.swiper-slide{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     border-radius: 4px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .swiper-slide h3{
@@ -528,6 +557,30 @@ main .body-section{
   background-color: #f1f1f1;
 }
 
+.first-footer{
+  padding: 10px;
+}
+
+.first-footer h2{ 
+  margin-top: 1px;
+  background: linear-gradient(135deg, #ac118f, #6084c3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 300% 300%;
+  -webkit-text-fill-color: transparent;
+  animation: animate-dms-logo 2s ease-in-out infinite;
+}
+
+@keyframes animate-dms-logo{
+  0%{background-position: 0% 50%}
+  50%{background-position: 100% 50%}
+  100%{background-position: 0% 50%}
+}
+
+.first-footer p{
+  font-size: 15px;
+}
+
 .second-footer{
   padding: 10px;
   background-color: lavender;
@@ -554,9 +607,13 @@ main .body-section{
 }
 
 .third-footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 250px auto;
+}
+
+.main-FOLLOW{
+  padding: 10px;
 }
 
 .third-footer h2{
@@ -564,8 +621,14 @@ main .body-section{
   margin-top: 1px;
   font-size: 16px;
   color: rgb(5, 32, 63);
-  margin-bottom: 40px;
 }
+
+.map-img{
+  background-image: url('/img/map.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 
 .developer-footer{
