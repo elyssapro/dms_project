@@ -7,6 +7,10 @@ body{
     background-color: #6084c318;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* ---------------------------- HEADER SECTION ------------------- */
 
 /* .dms-header {
@@ -189,7 +193,7 @@ main .body-section{
     display: grid;
     gap: 10px;
     grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-4] minmax(300px, 250px) [col-end];
-    grid-template-rows: minmax(200px, 250px) minmax(650px, 650px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(260px, 300px) minmax(50px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(450px, 500px) minmax(350px, 450px) auto;
+    grid-template-rows: minmax(200px, 250px) minmax(650px, 650px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(300px, 300px) minmax(50px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(450px, 500px) minmax(350px, 450px) auto;
     grid-template-areas:
     'small-cont small-cont small-cont small-cont' 
     'photo-content photo-content photo-content photo-content'
@@ -217,7 +221,9 @@ main .body-section{
   display: grid;
   padding: 10px;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  grid-template-columns: 1fr;
+  overflow: hidden;
 }
 
 .cont-{
@@ -256,61 +262,6 @@ main .body-section{
     /* box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2); */
     box-shadow: rgba(0,0,0,0.1) 0px 4px 6px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
   }
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-
-
-.swiper-slide {
-  text-align: center;
-  /* font-size: 18px; */
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  /* display: block; */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-/* .autoplay-progress {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 10;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: var(--swiper-theme-color);
-} */
-/* 
-.autoplay-progress svg {
-  --progress: 0;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  stroke-width: 4px;
-  stroke: var(--swiper-theme-color);
-  fill: none;
-  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-  stroke-dasharray: 125.6;
-  transform: rotate(-90deg);
-}
- */
 
 .after-photo-title{
     /* background-color: lightslategray; */
@@ -375,24 +326,14 @@ main .body-section{
 .swiper {
     width: 100%;
     height: 100%;
-    margin: 20px auto;
   }
 
 .swiper-slide {
-    text-align: center;
-    /* font-size: 18px; */
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
-}
-
-.mission-header{
-    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
 }
 
   .after-mission{
@@ -517,6 +458,7 @@ main .body-section{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     padding: 1rem;
+    overflow: hidden;
   }
 
   .test-container{
