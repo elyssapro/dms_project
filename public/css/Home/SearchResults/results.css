@@ -178,7 +178,7 @@ main .body-section{
 }
 
 .skeleton {
-  opacity: .7;
+  /* opacity: .7; */
   animation: skeleton-loading 1s linear infinite alternate;
   z-index: -99;
 }
