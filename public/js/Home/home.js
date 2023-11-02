@@ -41,7 +41,7 @@ var swiperslidesystem = new Swiper(".mySwiperslidesystem", {
     slidesPerView: 3,
     spaceBetween: 30,
     autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
     },
 });
@@ -50,7 +50,7 @@ var swiperslidesystem = new Swiper(".mySwiperslidesystem", {
 var swipervertical = new Swiper(".mySwipervertical", {
   direction: "vertical",
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
     }
 });

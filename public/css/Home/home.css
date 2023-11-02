@@ -25,6 +25,7 @@ html{
     position: fixed;
     display: none;
     /* background-color: #6084c33d; */
+    z-index: 99;
   }
 
   .search-content{
@@ -405,28 +406,25 @@ main .body-section{
 
 
 
-
-.partenership .swipercube {
-  width: 100%;
-  height: 100%;
-}
-
-.partenership .swipercube img{
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  object-fit: cover;
-}
-
 .partenership .swiper-slide {
   background-position: center;
   background-size: cover;
+  display: grid;
 }
 
 
-.partenership .swiper-slide img {
-  display: block;
-  width: 100%;
+.profile-partenership{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.main-profile-container{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: hsl(200, 20%, 70%);
 }
 
 .vertical-content{
