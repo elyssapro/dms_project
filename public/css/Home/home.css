@@ -272,6 +272,7 @@ main .body-section{
   -webkit-text-fill-color: transparent;
   background-size: 300% 300%;
   animation: animate-dms-introduction 2s ease-in-out infinite;
+  font-size: 18px;
 }
 
 @keyframes animate-dms-introduction{
@@ -442,8 +443,8 @@ main .body-section{
 .vertical-cont{
   width: 100%;
   border-radius: 4px;
-  background-color: white;
-  box-shadow: 1px 4px 8px 2px rgba(0,0,0,0.2);
+  /* background-color: white; */
+  /* box-shadow: 1px 4px 8px 2px rgba(0,0,0,0.2); */
   padding: 10px;
   display: grid;
   grid-template-rows: 40px auto;
@@ -455,8 +456,10 @@ main .body-section{
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 1rem;
+  padding: 1rem;
+  overflow: auto;
 }
 
 .skeleton{
@@ -476,11 +479,40 @@ main .body-section{
   margin-bottom: 0;
 }
 
+@keyframes animate-container-before{
+  0%{
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100%{
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
 .cont-b{
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: white;
   box-shadow: rgba(0,0,0,0.3) 0px 4px 8px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
+  padding: 16px;
 }
+
+.header-cont-b{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.title-cont-b{
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-transform: capitalize;
+  flex-grow: 1;
+  word-wrap: none;
+  white-space: nowrap;
+}
+
 .many-vertical{
   grid-area: many-ver;
   padding: 5px;
