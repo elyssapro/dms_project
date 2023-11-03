@@ -397,8 +397,16 @@ main .body-section{
 
 .contact-us{
   grid-area: contact-us;
-  background-color: lightslategray;
   border-radius: 4px;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.1) 0px 4px 6px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
+  padding: 10px;
+  margin-left: 2px;
+}
+
+.contact-us p{
+  /* color: white; */
+  margin-top: 1px;
 }
 
 .partenership{
@@ -534,6 +542,8 @@ main .body-section{
   margin-top: 1px;
   text-align: center;
 }
+
+
 .test-message{
   opacity: .7;
   animation: skeleton-loading 1s linear infinite alternate;
