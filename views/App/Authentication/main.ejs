@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
       <div class="box">
         <div class="header-loader">
@@ -219,7 +220,7 @@
 
               <div class="tab">
 
-                <div class="verification-inner-box">         
+                <div class="verification-inner-box last-verification-page">         
                   <div class="informational-page">
                     <p class="school-manager-cont">
                       School Manager account name
@@ -243,7 +244,7 @@
                       <p>Enter 6 digits sent to +250 7** *** **8</p>
                     </div>
                     <div class="body-content">
-                      <input type="number" id="verify-input">
+                      <input type="number" id="verify-input" autofocus="true">
                       <input type="number" disabled id="verify-input" maxlength="1">
                       <input type="number" disabled id="verify-input">
                       <input type="number" disabled id="verify-input">
@@ -269,7 +270,7 @@
                       <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus sunt est labore eius?</p> -->
                     </div>
         
-                    <button class="confirm-verify" disabled>
+                    <button class="confirm-verify" id="test-button" onclick="nextPrev(1)" disabled>
                       <svg id="verifyLoader">
                         <circle cx="70" cy="70" r="10"></circle>
                     </svg>
@@ -280,10 +281,58 @@
 
               </div>
 
-              <div class="tab">Birthday:
-                <p><input placeholder="dd" oninput="this.className = ''"></p>
-                <p><input placeholder="mm" oninput="this.className = ''"></p>
-                <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+              <div class="tab">
+                <div class="choose-profile-container">
+                  <div class="container disable">
+                    <h2>Choose and Edit your profile picture</h2>
+                    <div class="wrapper">
+                        <div class="editor-panel">
+                            <div class="filter">
+                              <p class="title">Filters</p>
+                                <div class="options">
+                                    <button id="brightness" class="active">Brightness</button>
+                                    <button id="saturation">Saturation</button>
+                                    <button id="inversion">Inversion</button>
+                                    <button id="grayscale">Grayscale</button>
+                                </div>
+                                <div class="slider">
+                                    <div class="filter-info">
+                                        <p class="name">Brighteness</p>
+                                        <p class="value">100%</p>
+                                    </div>
+                                    <input type="range" value="100" min="0" max="200">
+                                </div>
+                            </div>
+                            
+                            <div class="rotate">
+                              <p class="title">Rotate & Flip</p>
+                                <div class="options">
+                                    <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                                    <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                                    <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                                    <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-img">
+                            <img src="/img/image-placeholder.svg" alt="preview-img">
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="reset-filter">Reset Filters</button>
+                        <div class="row">
+                            <input type="file" class="file-input" accept="image/*" hidden>
+                            <button class="choose-img">Choose Image</button>
+                            <button class="save-img">Save Image</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choose-profile-bottom-container">
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit nesciunt laborum consequatur explicabo nobis, deserunt consectetur doloribus sit, non fuga inventore nihil sed similique perferendis animi impedit quo vitae alias. Omnis dolores ipsam harum praesentium eos. Ullam, eius omnis placeat unde temporibus corporis cum, repellendus dolore quisquam sunt soluta, dolores debitis facere voluptatem eveniet vitae cupiditate numquam atque consequuntur nostrum? Facilis aperiam rem vero corrupti, fugiat veritatis laudantium optio sequi temporibus illum amet, at hic? Laborum doloribus maxime eaque nobis?</p>
+                </div>
+
+                </div>
               </div>
 
               <div class="tab">Login Info:

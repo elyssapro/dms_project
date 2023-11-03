@@ -194,7 +194,7 @@ main .body-section{
     display: grid;
     gap: 10px;
     grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-4] minmax(300px, 250px) [col-end];
-    grid-template-rows: minmax(200px, 250px) minmax(650px, 650px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(300px, 300px) minmax(50px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(450px, 500px) minmax(350px, 450px) auto;
+    grid-template-rows: minmax(200px, 250px) minmax(650px, 650px) minmax(30px, 40px) minmax(270px, 300px) minmax(180px, 200px) minmax(30px, 40px) minmax(300px, 300px)  minmax(450px, 500px) minmax(50px, 60px) minmax(350px, 400px) minmax(450px, 500px) minmax(350px, 450px) auto;
     grid-template-areas:
     'small-cont small-cont small-cont small-cont' 
     'photo-content photo-content photo-content photo-content'
@@ -203,9 +203,9 @@ main .body-section{
     'about-three about-four about-five about-six'
     'after-about after-about after-about after-about'
     'mission-one mission-one mission-one mission-one'
+    'vertical-content vertical-content vertical-content vertical-content'
     'after-mission after-mission after-mission after-mission'
     'contact-us contact-us contact-us partenership'
-    'vertical-content vertical-content vertical-content vertical-content'
     'many-ver many-ver many-ver many-ver'
     'test test test test'
     'main-footer main-footer main-footer main-footer'
