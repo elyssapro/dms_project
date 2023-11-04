@@ -145,6 +145,7 @@
                     </div>
                   </div>
                   <div class="grid-item sidebar">
+    redirectUser = (timer(redirectUser));
         
                     <div class="swiper mySwiper">
                       <div class="swiper-wrapper">
@@ -158,8 +159,6 @@
                           <img src="/img/image3.png" alt="">
                         </div>
                       </div>
-                      <!-- <div class="swiper-button-next"></div>
-                      <div class="swiper-button-prev"></div> -->
                       <div class="swiper-pagination"></div>
                     </div>
         
@@ -231,7 +230,6 @@
                         SMS text verification lets websites, apps, banks, and social networks double-check a user's identity. After entering your username and password, companies will send an SMS verification number to your smartphone. Use that number to complete your login. That's SMS verification. SMS verification goes by other names too.</p><br>
                       <p>SMS verification adds a layer of security to a login process, typically after a user has input their login details. This extra step of security allows businesses greater control over who accesses their platforms. A numeric or alphanumeric code that is texted or emailed to users to verify their identity.</p><br>
                       <p>The most common time frames are between 5 and 10 minutes. Depending on what your code is for, you can change the expiration times.</p>
-                      <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis omnis, ut unde doloribus nemo quos distinctio odio fuga nobis dolor commodi praesentium at eos? Iste porro laborum, aliquam eum autem, dolorum accusantium, itaque quis pariatur mollitia beatae consequatur suscipit reiciendis qui sunt eaque provident! Dolor fuga iusto debitis, quis architecto doloribus aliquam ea temporibus ab qui, minus earum placeat quod, quos modi nemo in? Officiis incidunt odio at laborum itaque saepe voluptatum quia earum? Facilis fugiat est quisquam vero distinctio explicabo rerum sapiente iure, aut, ipsa sit porro aliquid eum quae beatae magnam libero cum quaerat laudantium. Fugiat nobis nemo facere ab eum, quos harum beatae fuga debitis adipisci, corporis illo placeat consectetur cupiditate! Recusandae tempora nesciunt impedit officia quisquam?</p> -->
                     </div>
                     <button class="help-button">Get help</button>
                   </div>
@@ -261,13 +259,11 @@
                           <i class="fa-solid fa-envelope fa-bounce"></i>
                            Get verified via your E-mail address</button><span style="text-decoration: underline;">al*******************.com</span>
                       </span>
-                      <!-- <p style="margin-bottom: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat in debitis quas nihil.</p> -->
                       <span style="display: flex; justify-content: flex-start; align-items: center;">
                         <button class="email-option">
                           <i class="fa-solid fa-phone fa-bounce"></i>
                           Get verified via your Phone call</button><span style="text-decoration: underline;">+250 78* *** **7</span>
                       </span>
-                      <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus sunt est labore eius?</p> -->
                     </div>
         
                     <button class="confirm-verify" id="test-button" onclick="nextPrev(1)" disabled>
@@ -281,8 +277,24 @@
 
               </div>
 
-              <div class="tab">
+              <div class="tab upload-profile-container">
                 <div class="choose-profile-container">
+
+                  <div class="main-loading-content">
+                    <div class="container-loading">
+                      <div class="loader-item main-loader-container">
+                          <span> <svg>
+                              <circle cx="70" cy="70" r="20"></circle>
+                          </svg></span>
+                      </div>
+              
+                      <div class="loader-item loader-content">
+                          <!-- <p>Loading student information. Please wait</p> -->
+                          <p id="displayer-screen"></p>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="container disable">
                     <h2>Choose and Edit your profile picture</h2>
                     <div class="wrapper">
@@ -323,7 +335,7 @@
                         <div class="row">
                             <input type="file" class="file-input" accept="image/*" hidden>
                             <button class="choose-img">Choose Image</button>
-                            <button class="save-img">Save Image</button>
+                            <button class="save-img" onclick="bringProfileAnimation()">Save Image</button>
                         </div>
                     </div>
                 </div>

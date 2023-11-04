@@ -169,6 +169,7 @@ rotateOptions = document.querySelectorAll(".rotate button"),
 previewImg = document.querySelector(".preview-img img"),
 resetFilterBtn = document.querySelector(".reset-filter"),
 chooseImgBtn = document.querySelector(".choose-img"),
+// saveImgBtn = document.querySelector(".save-img");
 saveImgBtn = document.querySelector(".save-img");
 
 let brightness = "100", saturation = "100", inversion = "0", grayscale = "0";
@@ -270,7 +271,34 @@ const saveImage = () => {
     const link = document.createElement("a");
     link.download = "image.jpg";
     link.href = canvas.toDataURL();
-    link.click();
+    // link.click();
+}
+
+function bringProfileAnimation() {
+    document.querySelector('.main-loading-content').style.display = 'block';
+    const initialization = (fn) => (...args) => {
+        document.getElementById('displayer-screen').innerHTML = 'Saving your Profile Picture';
+        return fn(...args);
+    }
+
+    const ChangeProfileLater = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = 'Note that you can always change this profile picture in your settings later'
+            return fn(...args)
+        }, 4000);
+    }
+
+  
+    let redirectUser = (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = `You are moving to the next session of this registration process in ${[args].toString()} seconds`;
+        }, 4000);
+        
+    }
+
+    redirectUser = (ChangeProfileLater(redirectUser));
+    redirectUser = (initialization(redirectUser));
+    redirectUser('10');
 }
 
 filterSlider.addEventListener("input", updateFilter);
@@ -309,14 +337,12 @@ function nextPrev(n) {
     return false;
   }
   if(currentTab == 1){
-    //
-      const countDown = () => {
-       let timeSeconds = 61;
-    //    console.log('Hello world');
-       const timerFunction = () => {
+    
+    const countDown = () => {
+        let timeSeconds = 61;
+        const timerFunction = () => {
         const timerInterval = setInterval(() => {
             timeSeconds -= 1;
-            // console.log(timeSeconds);
             if(timeSeconds <= 0) {
                 document.getElementById('resend-seconds').style.display = 'none';
                 document.querySelector('.resend-button').style.backgroundColor = 'rgb(0, 128, 255)';
