@@ -50,15 +50,15 @@ verificationOptions.forEach((verifyOpt) => {
 
         //clearing previously cont and replaced by verifying content
 
-        setInterval(() => {
-            optionMainContent.style.display = 'none';
-            optionSideBarContent.style.display = 'none';
-        },2000);
+        // setTimeout(() => {
+        //     optionMainContent.style.display = 'none';
+        //     optionSideBarContent.style.display = 'none';
+        // },2000);
 
-        setTimeout(() => {
-            headerLoader.style.display = 'none';
-            verifyingPage.style.display = 'block';
-        }, 2000);
+        // setTimeout(() => {
+        //     headerLoader.style.display = 'none';
+        //     verifyingPage.style.display = 'block';
+        // }, 2000);
 
         // headerLoader.style.display = 'block';
         // optionMainContent.classList.add('loading-content');
@@ -157,6 +157,7 @@ setInterval(() => {
         });
     }); 
 }, 1)
+
 
 
 const fileInput = document.querySelector(".file-input"),
@@ -307,6 +308,30 @@ function nextPrev(n) {
     document.getElementById("regForm").submit();
     return false;
   }
+  if(currentTab == 1){
+    //
+      const countDown = () => {
+       let timeSeconds = 61;
+    //    console.log('Hello world');
+       const timerFunction = () => {
+        const timerInterval = setInterval(() => {
+            timeSeconds -= 1;
+            // console.log(timeSeconds);
+            if(timeSeconds <= 0) {
+                document.getElementById('resend-seconds').style.display = 'none';
+                document.querySelector('.resend-button').style.backgroundColor = 'rgb(0, 128, 255)';
+                document.querySelector('.resend-button').style.color = 'white';
+                document.querySelector('.resend-button').style.cursor = 'pointer';
+                clearInterval(timerInterval);
+            }
+            document.getElementById('resend-seconds').innerHTML = 'in ' + timeSeconds + ' seconds';
+        }, 1000);
+       }
+        return timerFunction;
+    }
+    const result = countDown();
+    result();
+  }
   showTab(currentTab);
 }
 
@@ -327,4 +352,5 @@ function validateForm() {
 }
 
 //creating server to  store progress of user while reloading 
+
 
