@@ -573,6 +573,7 @@ main.sign-up-mode .carousel {
   border: none;
   margin-bottom: 30px;
   cursor: not-allowed;
+  transition: .4s;
 }
 
 .other-option{
@@ -636,7 +637,7 @@ main.sign-up-mode .carousel {
 
 /* verify btn loading */
 
-svg {
+.svgverifyloader {
   position: relative;
   margin-right: 5px;
   width: 23px;
@@ -652,7 +653,7 @@ svg {
       transform: rotate(360deg);
   }
 }
-svg circle {
+.svgverifyloader .svgverifyloadercircle {
   width: 100%;
   height: 100%;
   fill: none;
@@ -946,7 +947,7 @@ svg circle {
   align-items: center;
 }
 
-svg {
+.svg-main-loader {
   position: relative;
   width: 150px;
   height: 150px;
@@ -961,7 +962,7 @@ svg {
       transform: rotate(360deg);
 }
 }
-svg circle {
+svg .svg-main-loader-circle {
   width: 100%;
   height: 100%;
   fill: none;
@@ -971,10 +972,10 @@ svg circle {
   transform: translate(5px, 5px);
   stroke-dasharray: 25;
   stroke-dashoffset: 10;
-  animation: animate 3s linear infinite;
+  animation: animate-main-loader 3s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animate-main-loader {
   0%, 100% {
       stroke-dashoffset: 420;
   }

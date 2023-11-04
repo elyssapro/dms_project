@@ -145,7 +145,6 @@
                     </div>
                   </div>
                   <div class="grid-item sidebar">
-    redirectUser = (timer(redirectUser));
         
                     <div class="swiper mySwiper">
                       <div class="swiper-wrapper">
@@ -267,8 +266,8 @@
                     </div>
         
                     <button class="confirm-verify" id="test-button" onclick="nextPrev(1)" disabled>
-                      <svg id="verifyLoader">
-                        <circle cx="70" cy="70" r="10"></circle>
+                      <svg id="verifyLoader" class="svgverifyloader">
+                        <circle  class="svgverifyloadercircle" cx="70" cy="70" r="10"></circle>
                     </svg>
                       <p id="VerifyingTxt">Verify</p><p id="verifyingloaderdots"></p></button>
         
@@ -283,8 +282,8 @@
                   <div class="main-loading-content">
                     <div class="container-loading">
                       <div class="loader-item main-loader-container">
-                          <span> <svg>
-                              <circle cx="70" cy="70" r="20"></circle>
+                          <span> <svg class="svg-main-loader">
+                              <circle class="svg-main-loader-circle" cx="70" cy="70" r="20"></circle>
                           </svg></span>
                       </div>
               

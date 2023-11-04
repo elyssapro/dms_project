@@ -2,316 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="grid"></div>
-  
-  <template id="card-template">
-    <div class="card">
-      <div class="header">
-        <img class="header-img skeleton" src="https://source.unsplash.com/100x100/?nature" />
-        <div class="title" data-title>
-          <div class="skeleton skeleton-text"></div>
-          <div class="skeleton skeleton-text"></div>
-        </div>
-      </div>
-      <div data-body>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-      </div>
-    </div>
-  </template>
-</body>
-<script>
-  const grid = document.querySelector('.grid')
-  const cardTemplate = document.getElementById('card-template')
-  for (let i = 0; i < 10; i++) {
-    grid.append(cardTemplate.content.cloneNode(true))
-  }
+  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
 
-  fetch("https://jsonplaceholder.typicode.com/posts")
-    .then(res => res.json())
-    .then(posts => {
-      grid.innerHTML = ''
-      posts.forEach(post => {
-        const div = cardTemplate.content.cloneNode(true)
-        div.querySelector('[data-title]').textContent = post.title
-        div.querySelector('[data-body]').textContent = post.body
-        grid.append(div)
-      })
-  })
+<script>
+
+	function loadGoogleTranslate()
+
+	{
+
+		new google.translate.TranslateElement("myid")
+
+	}
+
 </script>
 
-<style>
-  
-.skeleton {
-  opacity: .7;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-.skeleton-text {
-  width: 100%;
-  height: .5rem;
-  margin-bottom: .25rem;
-  border-radius: .125rem;
-}
-
-.skeleton-text:last-child {
-  margin-bottom: 0;
-  width: 80%;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(200, 20%, 70%);
-  }
-
-  100% {
-    background-color: hsl(200, 20%, 95%);
-  }
-}
+<div id="myid">Choose Language</div>
 
 
 
+<h1>Welcome to my Website</h1>
 
+<h1>Simple Way to Create MultiLingual Website</h1>
 
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 1rem;
-}
+<h3>Google Translator Script Use to Convert All Over Language Simple Steps</h3>
 
-.card {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  padding: 16px;
-  border-radius: 4px;
-}
-
-.header {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.header-img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 100%;
-  margin-right: 1rem;
-  flex-shrink: 0;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 1.25rem;
-  text-transform: capitalize;
-  word-wrap: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  flex-grow: 1;
-}
-</style>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+<h2>Like Share and Subscribe Our Avadh Tutor Channel</h2>
 </body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-  
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      direction: "vertical",
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-</body>
-
 </html>
