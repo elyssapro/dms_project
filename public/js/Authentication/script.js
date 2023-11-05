@@ -292,13 +292,21 @@ function bringProfileAnimation() {
     let redirectUser = (...args) => {
         setTimeout(() => {
             document.getElementById('displayer-screen').innerHTML = `You are moving to the next session of this registration process in ${[args].toString()} seconds`;
+            setTimeout(() => {
+                document.querySelector('.main-loading-content').classList.add('close-loader-animation');
+            }, 5000);
+            setTimeout(() => {
+                const hrefLink = document.createElement('button');
+                hrefLink.setAttribute('onclick', 'nextPrev(1)');
+                hrefLink.click();
+            }, 6000);
         }, 4000);
         
     }
 
     redirectUser = (ChangeProfileLater(redirectUser));
     redirectUser = (initialization(redirectUser));
-    redirectUser('10');
+    redirectUser('5');
 }
 
 filterSlider.addEventListener("input", updateFilter);

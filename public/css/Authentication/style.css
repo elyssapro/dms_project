@@ -930,6 +930,15 @@ main.sign-up-mode .carousel {
 @keyframes animate-loading-profile-content{
   100%{transform: translateY(250px);}
 }
+
+.close-loader-animation{
+  /* position: relative; */
+  animation: close-loader-animation .8s ease forwards;
+}
+
+@keyframes close-loader-animation{
+  100%{transform: translateY(-750px);}
+}
 .loader-item{
   width: 100%;
 }
@@ -987,11 +996,10 @@ svg .svg-main-loader-circle {
   } 
 } 
 
-
-
-
-
-
+.third-tab{
+  width: 100%;
+  height: 100%;
+}
 
 @media (max-width: 850px) {
   .box {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -31,5 +31,57 @@
 <h3>Google Translator Script Use to Convert All Over Language Simple Steps</h3>
 
 <h2>Like Share and Subscribe Our Avadh Tutor Channel</h2>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multilingual Website</title>
+</head>
+<body>
+  <h1 id="title">Welcome</h1>
+  <p id="description">This is a sample multilingual website. the name of elyssa</p>
+  <select id="languageSelector">
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+    <!-- Add more language options as needed -->
+  </select>
+  
+  <script>
+    // Replace this with loading translations from your JSON files.
+    const translations = {
+      en: {
+        title: "Welcome",
+        description: "This is a sample multilingual website. the name of elyssa",
+      },
+      es: {
+        title: "Bienvenido",
+        description: "Este es un sitio web multilingüe de muestra.",
+      }
+    };
+
+    const titleElement = document.getElementById('title');
+    const descriptionElement = document.getElementById('description');
+    const languageSelector = document.getElementById('languageSelector');
+
+    function updateLanguage() {
+      const selectedLanguage = languageSelector.value;
+      titleElement.textContent = translations[selectedLanguage].title;
+      descriptionElement.textContent = translations[selectedLanguage].description;
+    }
+
+    // Detect and set the user's preferred language
+    const userLanguage = navigator.language.substring(0, 2);
+    if (userLanguage in translations) {
+      languageSelector.value = userLanguage;
+    }
+
+    // Set initial language
+    updateLanguage();
+
+    // Add an event listener to the language selector
+    languageSelector.addEventListener('change', updateLanguage);
+  </script>
 </body>
 </html>

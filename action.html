@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+    #actionButton {
+      background-color: #0074d9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+
+.container{
+    max-width: 400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: [col-start] minmax(40px, 60px) [col-2] minmax(200px, 3fr) [col-end];
+    grid-template-rows: minmax(60px, 100px);
+    min-height: 50px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.3);
+    font-family: 'Poppins', sans-serif;
+    display: none;
+}
+
+.loader-item{
+    width: 100%;
+}
+.main-loader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content{
+    font-size: 15px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    animation: rotate 0.99s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+}
+}
+svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 2;
+    stroke: rgb(104, 104, 245);
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 25;
+    stroke-dashoffset: 10;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        stroke-dashoffset: 420;
+    }
+    50% {
+        stroke-dashoffset: 240;
+    }
+    50.1% {
+        stroke-dashoffset: 240;
+    } 
+} 
+
+
+  
+  </style>
+</head>
+<body>
+    <button id="actionButton">Click Me</button>
+    <div class="container" id="loadingSpinner">
+        <div class="loader-item main-loader-container">
+            <span> <svg>
+                <circle cx="70" cy="70" r="20"></circle>
+            </svg></span>
+        </div>
+    
+        <div class="loader-item loader-content">
+            <p>Loading student information. Please wait</p>
+        </div>
+      </div>
+    <h2 id="greetingText" style="display: none;">Welcome!</h2>
+
+  <script>
+    const actionButton = document.getElementById('actionButton');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const greetingText = document.getElementById('greetingText');
+
+    actionButton.addEventListener('click', async () => {
+      showLoadingSpinner();
+
+      // Measure network speed
+      const networkSpeed = await measureNetworkSpeed();
+
+      if (networkSpeed !== 'offline') {
+        // Simulate an action (e.g., an API request)
+        await simulateAction(networkSpeed);
+        displayGreeting();
+      }
+
+      hideLoadingSpinner();
+    });
+
+    function showLoadingSpinner() {
+      actionButton.disabled = true;
+      loadingSpinner.style.display = 'block';
+    }
+
+    function hideLoadingSpinner() {
+      actionButton.disabled = false;
+      loadingSpinner.style.display = 'none';
+    }
+
+    function displayGreeting() {
+      greetingText.style.display = 'block';
+    }
+
+    async function measureNetworkSpeed() {
+      try {
+        const connection = navigator.connection;
+        if (connection && connection.effectiveType) {
+          return connection.effectiveType;
+        }
+      } catch (error) {
+        // Handle errors or use a default value
+        console.error(error);
+      }
+
+      // Return 'offline' if there is no internet connection
+      return 'offline';
+    }
+
+    async function simulateAction(networkSpeed) {
+      // You can adjust the waiting time based on the network speed
+      let waitTime = 3000; // Default wait time (3 seconds)
+
+      if (networkSpeed === '4g') {
+        waitTime = 10000; // Slower network, so wait longer (5 seconds)
+      } else if (networkSpeed === '3g') {
+        waitTime = 15000; // Even slower network, wait even longer (8 seconds)
+      }
+
+      // Simulate an action by waiting
+      await new Promise(resolve => setTimeout(resolve, waitTime));
+    }
+  </script>
+</body>
+</html>
