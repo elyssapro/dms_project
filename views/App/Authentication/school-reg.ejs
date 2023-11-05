@@ -1,23 +1,11 @@
 <div class="box">
-    <!-- <div class="tab first-section">
+    <div class="tab first-section">
        <div class="admin-basic-info">
             <div class="admin-main-info">
                 <div class="skeleton skeleton-text"></div>
             </div>
             <div class="admin-profile">
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <br>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div><br>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
-                <div class="skeletons skeletons-text"></div>
+                <div class="skeleton skeleton-text"></div>
             </div>
        </div>
        <div class="admin-description-info">
@@ -30,11 +18,41 @@
                 <button onclick="nextPrev(1)">Agree Terms & Condition</button>
             </div>
        </div>
-    </div> -->
+    </div>
    
     <div class="tab second-section">
-        <div class="grid"></div>
-        <div class="grid"></div>
+        <div class="grid-second">
+            <div class="admin-main-info">
+                <div class="skeleton skeleton-text"></div>
+            </div>
+
+            <div class="admin-profile">
+                <div class="skeleton skeleton-text"></div>
+            </div>
+        </div>
+
+
+        <div class="grid-seconds">
+
+
+            <div class="min-tab min-first-tab">
+                        
+            </div>
+            <div class="min-tab" style="padding: 10px;">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
+                <p>second tab</p>
+                <button onclick="next(1)">next</button>
+            </div>
+            <div class="min-tab">
+                <p>Last tab</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati debitis ad dolorem tempora illum ipsum delectus iste deserunt! Incidunt, itaque! Praesentium quos, earum impedit eaque blanditiis incidunt dolorem unde, nostrum sequi totam nulla quam porro excepturi magnam possimus! Fugiat amet sapiente expedita autem error officiis sed quas odio, nihil doloribus quasi officia odit reiciendis similique tempore praesentium modi dolorum vel excepturi quaerat, ex magnam culpa dolorem. Facere aspernatur eveniet perspiciatis, obcaecati sapiente tempora ab nesciunt itaque, eius dolorem velit atque expedita laborum quasi! Ipsa sapiente delectus odio recusandae excepturi harum eligendi beatae, doloremque laborum, maxime porro deserunt sed modi et ea suscipit consectetur at obcaecati laudantium iste commodi deleniti magnam hic! Quas ducimus impedit nobis, provident similique consequuntur assumenda. Impedit, vitae laborum quia nulla eligendi enim voluptate excepturi aliquid, sunt ipsum recusandae dolor error possimus perspiciatis quos veniam voluptates nemo saepe ipsa quasi. Aperiam vitae odit ab voluptas modi. Eligendi magnam quisquam, voluptatibus iusto sint fugiat temporibus, obcaecati, cupiditate in ullam eius cumque numquam ab architecto eum ad reprehenderit. Magnam adipisci velit quisquam consequatur libero voluptate alias eos provident qui.</p>
+                <button onclick="next(1)">next</button>
+            </div>
+
+<script>
+    
+</script>
+        </div>
     </div>
     <div class="tab">
         
@@ -43,32 +61,4 @@
         <p>this is the third tab</p>
     </div>
 </div>
-
-
-<script>
-    var currentTab = 0;
-    showTab(currentTab);
-
-    function showTab(n) {
-        var x = document.getElementsByClassName("tab");
-        x[n].style.display = "grid";
-        if (n == 0) {
-            document.getElementById("prevBtn").style.display = "none";
-        } else {
-            document.getElementById("prevBtn").style.display = "inline";
-        }
-        if (n == (x.length - 1)) {
-            document.getElementById("nextBtn").innerHTML = "Submit";
-        } else {
-            document.getElementById("nextBtn").innerHTML = "Next";
-        }
-        fixStepIndicator(n)
-    }
-
-    function nextPrev(n) {
-        var x = document.getElementsByClassName("tab");
-        x[currentTab].style.display = "none";
-        currentTab = currentTab + n;
-        showTab(currentTab);
-    }
 </script>
