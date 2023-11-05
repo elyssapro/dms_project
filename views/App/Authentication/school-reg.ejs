@@ -1,17 +1,37 @@
 <div class="box">
-    <div class="tab first-section">
+    <!-- <div class="tab first-section">
        <div class="admin-basic-info">
-        <div class="admin-main-info"></div>
-        <div class="admin-profile"></div>
+            <div class="admin-main-info">
+                <div class="skeleton skeleton-text"></div>
+            </div>
+            <div class="admin-profile">
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <br>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div><br>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+                <div class="skeletons skeletons-text"></div>
+            </div>
        </div>
        <div class="admin-description-info">
-        <p><span class="dms-introduction">school discipline management system,</span> also known as a discipline management software or system, is a tool or platform designed to help schools manage and maintain discipline, behavior, and conduct among students. It is used to streamline various aspects of disciplinary processes within an educational institution.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quasi consequatur quisquam, debitis, cumque nesciunt iusto sint distinctio minus assumenda ullam sunt vitae maxime aspernatur quas non odit, enim fugiat voluptatibus! Possimus perferendis tempora iste maiores ab, ipsa numquam omnis inventore doloremque saepe dolores explicabo quo ea quam voluptatibus eum itaque eaque. Error blanditiis molestias saepe assumenda quia minus, repellat esse veritatis officiis nihil quis id amet eligendi quos laboriosam. Ullam ipsum tempora autem voluptas possimus alias suscipit repellendus error omnis harum, corrupti nemo fugiat quo facilis debitis similique delectus! Suscipit nisi nostrum omnis, deleniti recusandae sequi commodi similique, tempore doloribus perferendis obcaecati nesciunt vitae beatae laboriosam consectetur modi dignissimos labore. Magni fuga, harum eum eius accusantium excepturi fugiat dolorum assumenda porro suscipit asperiores provident earum molestiae debitis quisquam ab, beatae autem voluptatum. Qui voluptatum, ipsa corporis at quasi culpa ab numquam molestiae eius perferendis vel. Modi doloremque perferendis fuga nulla, sint reiciendis vero libero nisi! Vero, minus sapiente delectus quod, officia cumque ea dolorum magni, aliquid error repellat eligendi nisi tenetur eveniet deserunt tempora. Eum quae iste molestiae delectus?</p>
+            <div class="get-started-content">
+                <p style="padding: 5px;border-radius: 4px;color: white; background-color: hsl(400, 20%, 80%); box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;"><span class="dms-introduction">school discipline management system,</span> also known as a discipline management software or system, is a tool or platform designed to help schools manage and maintain discipline, behavior, and conduct among students. It is used to streamline various aspects of disciplinary processes within an educational institution.</p><br>
+                <p style="padding: 5px;border-radius: 4px;color: white; background-color: hsl(200, 20%, 80%); box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;">DMS Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dolore veritatis dolorum suscipit eaque cumque incidunt repudiandae architecto minus, laudantium mollitia, saepe odio deserunt, vitae laborum maxime maiores distinctio rerum molestias repellat explicabo libero rem magnam! Adipisci explicabo corrupti, cum cupiditate debitis nostrum voluptatem quas iusto repellat itaque, excepturi sint.</p><br>
+                <p style="padding: 5px;border-radius: 4px;color: white; background-color: hsl(100, 20%, 80%); box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;">Discipline Management System isicing elit. Sit at accusantium sequi molestias, iste adipisci totam porro? Perferendis eaque doloremque repellendus ducimus mollitia sapiente error suscipit eum vero possimus? Rem neque eos laborum ratione eum officiis culpa quae commodi explicabo est perferendis aliquam vitae nisi mollitia, atque animi maiores blanditiis? Lorem ipsum dolor sit amet.</p><br>
+            </div>
+            <div class="get-started-button">
+                <button onclick="nextPrev(1)">Agree Terms & Condition</button>
+            </div>
        </div>
-       <div class="admin-button-get-started">
-        <button>Agree Terms & Condition</button>
-       </div>
-    </div>
+    </div> -->
+   
     <div class="tab second-section">
         <div class="grid"></div>
         <div class="grid"></div>
@@ -30,32 +50,25 @@
     showTab(currentTab);
 
     function showTab(n) {
-    var x = document.getElementsByClassName("tab");
-    x[n].style.display = "grid";
-    if (n == 0) {
-        document.getElementById("prevBtn").style.display = "none";
-    } else {
-        document.getElementById("prevBtn").style.display = "inline";
-    }
-    if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
-    } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-    }
-    fixStepIndicator(n)
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "grid";
+        if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
+        } else {
+            document.getElementById("prevBtn").style.display = "inline";
+        }
+        if (n == (x.length - 1)) {
+            document.getElementById("nextBtn").innerHTML = "Submit";
+        } else {
+            document.getElementById("nextBtn").innerHTML = "Next";
+        }
+        fixStepIndicator(n)
     }
 
     function nextPrev(n) {
-    var x = document.getElementsByClassName("tab");
-    x[currentTab].style.display = "none";
-    currentTab = currentTab + n;
-    if (currentTab >= x.length) {
-        document.getElementById("regForm").submit();
-        return false;
+        var x = document.getElementsByClassName("tab");
+        x[currentTab].style.display = "none";
+        currentTab = currentTab + n;
+        showTab(currentTab);
     }
-    showTab(currentTab);
-    }
-
-
-
 </script>
