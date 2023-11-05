@@ -296,8 +296,8 @@ function bringProfileAnimation() {
                 document.querySelector('.main-loading-content').classList.add('close-loader-animation');
             }, 5000);
             setTimeout(() => {
-                const hrefLink = document.createElement('button');
-                hrefLink.setAttribute('onclick', 'nextPrev(1)');
+                const hrefLink = document.createElement('a');
+                hrefLink.setAttribute('href', '/school-registration');
                 hrefLink.click();
             }, 6000);
         }, 4000);
