@@ -41,16 +41,23 @@ main {
   display: grid;
 }
 
-.container-tabs{
-    border: 1px solid;
-}
-.tab {
+.tab{
   display: none;
 }
 
-.tab{
-    border: 1px solid;
+.first-section{
+  background-color: lightslategray;
 }
+
+.second-section{
+  grid-template-columns: [col-start] minmax(300px, 1fr) [col-2] minmax(400px, 2fr) [col-end];
+  gap: 5px;
+}
+
+.second-section .grid{
+  border: 1px solid;
+}
+
 @media (max-width: 850px) {
     .box {
       height: auto;

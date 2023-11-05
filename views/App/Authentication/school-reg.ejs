@@ -1,12 +1,14 @@
 <div class="box">
-    <div class="container-tabs">
-        <div class="tab">
+    <div class="tab first-section"></div>
+    <div class="tab second-section">
+        <div class="grid"></div>
+        <div class="grid"></div>
+    </div>
+    <div class="tab">
         
-        </div>
-        <div class="tab">
-            <p>this is the third tab</p>
-        </div>
-        <button onclick="nextPrev(1)">click</button>
+    </div>
+    <div class="tab">
+        <p>this is the third tab</p>
     </div>
 </div>
 
@@ -17,7 +19,7 @@
 
     function showTab(n) {
     var x = document.getElementsByClassName("tab");
-    x[n].style.display = "block";
+    x[n].style.display = "grid";
     if (n == 0) {
         document.getElementById("prevBtn").style.display = "none";
     } else {
