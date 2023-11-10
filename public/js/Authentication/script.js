@@ -122,7 +122,7 @@ setInterval(() => {
                     verificationInputs.forEach((input) => {
                         input.setAttribute('disabled', true);
                     })
-                }, 1000);
+                }, 1);
              }
 
              //loading the verification page while entering the verification code
