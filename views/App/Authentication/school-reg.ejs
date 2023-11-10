@@ -1,5 +1,5 @@
 <div class="box">
-    <div class="tab first-section">
+    <!-- <div class="tab first-section">
        <div class="admin-basic-info">
             <div class="admin-main-info">
                 <div class="skeleton skeleton-text"></div>
@@ -10,16 +10,14 @@
        </div>
        <div class="admin-description-info">
             <div class="get-started-content">
-                <p style="padding: 5px;border-radius: 4px;color: white; background-color: hsl(400, 20%, 80%); box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;"><span class="dms-introduction">school discipline management system,</span> also known as a discipline management software or system, is a tool or platform designed to help schools manage and maintain discipline, behavior, and conduct among students. It is used to streamline various aspects of disciplinary processes within an educational institution.</p><br>
-                <p style="padding: 5px;border-radius: 4px;color: white; background-color: hsl(200, 20%, 80%); box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;">DMS Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dolore veritatis dolorum suscipit eaque cumque incidunt repudiandae architecto minus, laudantium mollitia, saepe odio deserunt, vitae laborum maxime maiores distinctio rerum molestias repellat explicabo libero rem magnam! Adipisci explicabo corrupti, cum cupiditate debitis nostrum voluptatem quas iusto repellat itaque, excepturi sint.</p><br>
-                <p style="padding: 5px;border-radius: 4px;color: white; background-color: hsl(100, 20%, 80%); box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;">Discipline Management System isicing elit. Sit at accusantium sequi molestias, iste adipisci totam porro? Perferendis eaque doloremque repellendus ducimus mollitia sapiente error suscipit eum vero possimus? Rem neque eos laborum ratione eum officiis culpa quae commodi explicabo est perferendis aliquam vitae nisi mollitia, atque animi maiores blanditiis? Lorem ipsum dolor sit amet.</p><br>
+                
             </div>
             <div class="get-started-button">
                 <button onclick="nextPrev(1)">Agree Terms & Condition</button>
             </div>
        </div>
-    </div>
-   
+    </div> -->
+    
     <div class="tab second-section">
         <div class="grid-second">
             <div class="admin-main-info">
@@ -34,40 +32,93 @@
 
         <div class="grid-seconds">
 
-
             <div class="min-tab min-first-tab">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio corrupti expedita ducimus, consequuntur quibusdam eum sequi voluptas repudiandae eligendi delectus nisi obcaecati nulla totam blanditiis maxime quidem ab, voluptates odit sunt beatae dolores. Nesciunt excepturi ut asperiores, deleniti, quidem ratione eius laboriosam, libero doloribus odio debitis quisquam ad maxime explicabo vitae aut magni! Quos facilis dicta aut repellendus eos maxime explicabo omnis iure fuga molestiae repudiandae veritatis praesentium provident expedita magni et, cumque possimus asperiores! Autem aliquid illum omnis ut saepe corrupti accusantium minima neque hic quasi, voluptatem quisquam voluptate rem soluta commodi nihil sint harum, vel eos obcaecati! Deleniti earum facere aliquam itaque nisi officia, debitis dolores vel repellendus, eius ea, voluptatum rerum rem iure explicabo? Iusto sunt omnis inventore necessitatibus dolor cumque sit consequatur dolorum ullam at adipisci itaque, corporis nostrum in porro perspiciatis nisi fuga sequi atque facilis voluptatem, saepe ducimus! Nam ex veniam officiis harum quod eaque ratione cum consequatur. Quae laborum autem suscipit modi numquam deserunt, ipsum iste. At velit qui impedit, earum ipsum facilis quibusdam excepturi veniam repellendus quis magni nesciunt, voluptatem nihil vitae!</p>
-                <button onclick="next(1)">Next</button>
+                <div class="school-description">
+                    <form>
+                        <textarea placeholder="Describe your school by giving the general introduction of your school"></textarea>              
+                    </form>
+
+                    <div class="school-profile-picture">
+
+
+
+
+                        <div class="container disable">
+                            <h2>Choose and Edit your school profile picture</h2>
+                            <div class="wrapper">
+                                <div class="editor-panel">
+                                    <div class="filter">
+                                      <p class="title">Filters</p>
+                                        <div class="options">
+                                            <button id="brightness" class="active">Brightness</button>
+                                            <button id="saturation">Saturation</button>
+                                            <button id="inversion">Inversion</button>
+                                            <button id="grayscale">Grayscale</button>
+                                        </div>
+                                        <div class="slider">
+                                            <div class="filter-info">
+                                                <p class="name">Brighteness</p>
+                                                <p class="value">100%</p>
+                                            </div>
+                                            <input type="range" value="100" min="0" max="200">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="rotate">
+                                      <p class="title">Rotate & Flip</p>
+                                        <div class="options">
+                                            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                                            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                                            <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                                            <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-img">
+                                    <img src="/img/image-placeholder.svg" alt="preview-img">
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button class="reset-filter">Reset Filters</button>
+                                <div class="row">
+                                    <input type="file" class="file-input" accept="image/*" hidden>
+                                    <button class="choose-img">Choose Image</button>
+                                    <button class="save-img" onclick="next(1)">Next</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
             </div>
             <div class="min-tab" style="padding: 10px;">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
+                <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
                 <p>second tab</p>
-                <button onclick="next(1)">next</button>
+                <button id="next" onclick="next(1)">next</button>
             </div>
             <div class="min-tab" style="padding: 10px;">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
+                <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
                 <p>second tab</p>
-                <button onclick="next(1)">next</button>
+                <button id="next" onclick="next(1)">next</button>
             </div>
             <div class="min-tab" style="padding: 10px;">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
+                <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
                 <p>second tab</p>
-                <button onclick="next(1)">next</button>
+                <button id="next" onclick="next(1)">next</button>
             </div>
             <div class="min-tab" style="padding: 10px;">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
+                <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
                 <p>second tab</p>
-                <button onclick="next(1)">next</button>
+                <button id="next" onclick="next(1)">next</button>
             </div>
             <div class="min-tab" style="padding: 10px;">
                 <p>Last tab</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati debitis ad dolorem tempora illum ipsum delectus iste deserunt! Incidunt, itaque! Praesentium quos, earum impedit eaque blanditiis incidunt dolorem unde, nostrum sequi totam nulla quam porro excepturi magnam possimus! Fugiat amet sapiente expedita autem error officiis sed quas odio, nihil doloribus quasi officia odit reiciendis similique tempore praesentium modi dolorum vel excepturi quaerat, ex magnam culpa dolorem. Facere aspernatur eveniet perspiciatis, obcaecati sapiente tempora ab nesciunt itaque, eius dolorem velit atque expedita laborum quasi! Ipsa sapiente delectus odio recusandae excepturi harum eligendi beatae, doloremque laborum, maxime porro deserunt sed modi et ea suscipit consectetur at obcaecati laudantium iste commodi deleniti magnam hic! Quas ducimus impedit nobis, provident similique consequuntur assumenda. Impedit, vitae laborum quia nulla eligendi enim voluptate excepturi aliquid, sunt ipsum recusandae dolor error possimus perspiciatis quos veniam voluptates nemo saepe ipsa quasi. Aperiam vitae odit ab voluptas modi. Eligendi magnam quisquam, voluptatibus iusto sint fugiat temporibus, obcaecati, cupiditate in ullam eius cumque numquam ab architecto eum ad reprehenderit. Magnam adipisci velit quisquam consequatur libero voluptate alias eos provident qui.</p>
-                <button onclick="next(1)">next</button>
+                <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati debitis ad dolorem tempora illum ipsum delectus iste deserunt! Incidunt, itaque! Praesentium quos, earum impedit eaque blanditiis incidunt dolorem unde, nostrum sequi totam nulla quam porro excepturi magnam possimus! Fugiat amet sapiente expedita autem error officiis sed quas odio, nihil doloribus quasi officia odit reiciendis similique tempore praesentium modi dolorum vel excepturi quaerat, ex magnam culpa dolorem. Facere aspernatur eveniet perspiciatis, obcaecati sapiente tempora ab nesciunt itaque, eius dolorem velit atque expedita laborum quasi! Ipsa sapiente delectus odio recusandae excepturi harum eligendi beatae, doloremque laborum, maxime porro deserunt sed modi et ea suscipit consectetur at obcaecati laudantium iste commodi deleniti magnam hic! Quas ducimus impedit nobis, provident similique consequuntur assumenda. Impedit, vitae laborum quia nulla eligendi enim voluptate excepturi aliquid, sunt ipsum recusandae dolor error possimus perspiciatis quos veniam voluptates nemo saepe ipsa quasi. Aperiam vitae odit ab voluptas modi. Eligendi magnam quisquam, voluptatibus iusto sint fugiat temporibus, obcaecati, cupiditate in ullam eius cumque numquam ab architecto eum ad reprehenderit. Magnam adipisci velit quisquam consequatur libero voluptate alias eos provident qui.</p>
+                <button id="next" onclick="next(1)">next</button>
             </div>
 
-<script>
-    
-</script>
         </div>
     </div>
     <div class="tab">
@@ -77,4 +128,7 @@
         <p>this is the third tab</p>
     </div>
 </div>
+
+<script>
+
 </script>

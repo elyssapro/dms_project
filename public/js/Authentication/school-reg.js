@@ -1,5 +1,3 @@
-
-
 var currentTab = 0;
 var currentMinTab = 0;
 
@@ -8,6 +6,17 @@ showMinTab(currentMinTab);
 function showMinTab(n) {
     var  minTab = document.getElementsByClassName('min-tab');
     minTab[n].style.display = 'grid';
+    if(n == 0) {
+        document.getElementById('prev').style.display = 'none';
+    } else {
+        document.getElementById('prev').style.display = 'inline';
+    }
+
+    if(n >= minTab.length -1) {
+        document.getElementById('next').innerHTML = 'Submit';
+    } else {
+        document.getElementById('next').innerHTML = 'Next';
+    }
 }
 
 function next(n){
@@ -16,6 +25,125 @@ function next(n){
     currentMinTab = currentMinTab + n;
     showMinTab(currentMinTab);
 }
+
+const fileInput = document.querySelector(".file-input"),
+filterOptions = document.querySelectorAll(".filter button"),
+filterName = document.querySelector(".filter-info .name"),
+filterValue = document.querySelector(".filter-info .value"),
+filterSlider = document.querySelector(".slider input"),
+rotateOptions = document.querySelectorAll(".rotate button"),
+previewImg = document.querySelector(".preview-img img"),
+resetFilterBtn = document.querySelector(".reset-filter"),
+chooseImgBtn = document.querySelector(".choose-img"),
+saveImgBtn = document.querySelector(".save-img");
+
+let brightness = "100", saturation = "100", inversion = "0", grayscale = "0";
+let rotate = 0, flipHorizontal = 1, flipVertical = 1;
+
+const loadImage = () => {
+    let file = fileInput.files[0];
+    if(!file) return;
+    previewImg.src = URL.createObjectURL(file);
+    previewImg.addEventListener("load", () => {
+        resetFilterBtn.click();
+        document.querySelector(".container").classList.remove("disable");
+    });
+}
+
+const applyFilter = () => {
+    previewImg.style.transform = `rotate(${rotate}deg) scale(${flipHorizontal}, ${flipVertical})`;
+    previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+}
+
+filterOptions.forEach(option => {
+    option.addEventListener("click", () => {
+        document.querySelector(".active").classList.remove("active");
+        option.classList.add("active");
+        filterName.innerText = option.innerText;
+
+        if(option.id === "brightness") {
+            filterSlider.max = "200";
+            filterSlider.value = brightness;
+            filterValue.innerText = `${brightness}%`;
+        } else if(option.id === "saturation") {
+            filterSlider.max = "200";
+            filterSlider.value = saturation;
+            filterValue.innerText = `${saturation}%`
+        } else if(option.id === "inversion") {
+            filterSlider.max = "100";
+            filterSlider.value = inversion;
+            filterValue.innerText = `${inversion}%`;
+        } else {
+            filterSlider.max = "100";
+            filterSlider.value = grayscale;
+            filterValue.innerText = `${grayscale}%`;
+        }
+    });
+});
+
+const updateFilter = () => {
+    filterValue.innerText = `${filterSlider.value}%`;
+    const selectedFilter = document.querySelector(".filter .active");
+
+    if(selectedFilter.id === "brightness") {
+        brightness = filterSlider.value;
+    } else if(selectedFilter.id === "saturation") {
+        saturation = filterSlider.value;
+    } else if(selectedFilter.id === "inversion") {
+        inversion = filterSlider.value;
+    } else {
+        grayscale = filterSlider.value;
+    }
+    applyFilter();
+}
+
+rotateOptions.forEach(option => {
+    option.addEventListener("click", () => {
+        if(option.id === "left") {
+            rotate -= 90;
+        } else if(option.id === "right") {
+            rotate += 90;
+        } else if(option.id === "horizontal") {
+            flipHorizontal = flipHorizontal === 1 ? -1 : 1;
+        } else {
+            flipVertical = flipVertical === 1 ? -1 : 1;
+        }
+        applyFilter();
+    });
+});
+
+const resetFilter = () => {
+    brightness = "100"; saturation = "100"; inversion = "0"; grayscale = "0";
+    rotate = 0; flipHorizontal = 1; flipVertical = 1;
+    filterOptions[0].click();
+    applyFilter();
+}
+
+const saveImage = () => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = previewImg.naturalWidth;
+    canvas.height = previewImg.naturalHeight;
+    
+    ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    if(rotate !== 0) {
+        ctx.rotate(rotate * Math.PI / 180);
+    }
+    ctx.scale(flipHorizontal, flipVertical);
+    ctx.drawImage(previewImg, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+    
+    const link = document.createElement("a");
+    link.download = "image.jpg";
+    link.href = canvas.toDataURL();
+    // link.click();
+}
+
+filterSlider.addEventListener("input", updateFilter);
+resetFilterBtn.addEventListener("click", resetFilter);
+saveImgBtn.addEventListener("click", saveImage);
+fileInput.addEventListener("change", loadImage);
+chooseImgBtn.addEventListener("click", () => fileInput.click());
 
 
 showTab(currentTab);
@@ -42,83 +170,4 @@ function nextPrev(n) {
     showTab(currentTab);
 }
 
-function autocomplete(inp, arr) {
-    var currentFocus;
 
-    inp.addEventListener('input', function(e){
-        var a, b, i, val = this.value;
-        closeAllLists();
-
-        if(!val) { return false };
-        currentFocus = -1;
-
-        a = document.createElement('div');
-        a.setAttribute('id', this.id + 'autocomplete-list');
-        a.setAttribute('class', 'autocomplete-items');
-        this.parentNode.appendChild(a);
-
-        for(i = 0; i < arr.length; i++){
-            if(arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                b = document.createElement('div');
-                b.innerHTML = '<strong>' + arr[i].substr(0, val.length) + '</strong>';
-                b.innerHTML += arr[i].substr(val.length);
-                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-
-                b.addEventListener('click', function(e) {
-                    inp.value = this.getElementsByTagName('input')[0].value;
-                    closeAllLists();
-                })
-                a.appendChild(b);
-            }
-        }
-    });
-
-    inp.addEventListener('keyup', function(e){
-        var x = document.getElementById(this.id + 'autocomplete-list');
-        if(x) x = x.getElementsByTagName('div');
-
-        if(e.keyCode == 40) {
-            currentFocus++;
-            addActive(x);
-        } else if(e.keyCode == 38) {
-            currentFocus--;
-            addActive(x);
-        } else if(e.keyCode == 13) {
-            e.preventDefault();
-            if(currentFocus > -1) {
-                if(x) x[currentFocus].click();
-            }
-        }
-    });
-
-    function addActive(x) {
-        if(!x) return false;
-        removeActive(x);
-
-        if(currentFocus >= x.length) currentFocus = 0;
-        if(currentFocus < 0) currentFocus = (x.length -1);
-        x[currentFocus].classList.add('autocomplete-active');
-    }
-
-    function removeActive(x) {
-        for(var i = 0; i < x.length; i++) {
-            x[i].classList.remove('autocomplete-active');
-        }
-    }
-
-    function closeAllLists(elmnt) {
-        var x = document.getElementsByClassName('autocomplete-items');
-        for(var i = 0; i < x.length; i++) {
-            if(elmnt != x[i] && elmnt != inp) {
-                x[i].parentNode.removeChild(x[i]);
-            }
-        }
-    }
-
-    document.addEventListener('click', function(e){
-        closeAllLists(e.target);
-    });
-}
-
-var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
-autocomplete(document.getElementById('myInput', countries));
