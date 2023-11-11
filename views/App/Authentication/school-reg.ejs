@@ -33,6 +33,7 @@
         <div class="grid-seconds">
 
             <div class="min-tab min-first-tab">
+
                 <div class="school-description">
                     <form>
                         <textarea placeholder="Describe your school by giving the general introduction of your school"></textarea>              
@@ -87,10 +88,10 @@
                 </div>
             </div>
 
-            <div class="min-tab min-second-tab" style="padding: 10px;">
+            <!-- <div class="min-tab min-second-tab" style="padding: 10px;">
                 
 
-                <input type="text" name="" id="">
+                <input type="text" id="search-trades" placeholder="Search for trades or combination...">
                 <div class="grid-container-select-class main-container-select-class">
             
                     <form action="/SelectClass" method="post">
@@ -2610,34 +2611,89 @@
                     </form>
                 </div>
 
-                <button class="submit-class-form">Submit</button>
+                <button class="submit-class-form" onclick="next(1)">Submit</button>
 
 
+            </div> -->
 
+            
+            <div class="min-tab min-third-tab" style="padding: 10px;">
+               
+                <div class="min-min-container school-basic-info">
+                    <div class="school-basic-main-info school-basic-main-info-heading">
+                        <h3>School address</h3>
+                    </div>
+                    <div class="school-basic-main-info school-basic-info-inputs">
+                        <div class="inputs-main-grid-display-container">
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Country</label>
+                            </div>
 
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Province</label>
+                            </div>
+    
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">District</label>
+                            </div>
+                            
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Sector</label>
+                            </div>
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Cell</label>
+                            </div>
+                            
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Village</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-min-container school-basic-info">
+                    <div class="school-basic-main-info school-basic-main-info-heading">
+                        <h3>School manager address</h3>
+                    </div>
+                    <div class="school-basic-main-info school-basic-info-inputs">
+                        <div class="inputs-main-grid-display-container">
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Country</label>
+                            </div>
 
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Province</label>
+                            </div>
+    
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">District</label>
+                            </div>
+                            
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Sector</label>
+                            </div>
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Cell</label>
+                            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-            <div class="min-tab" style="padding: 10px;">
-                <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
-                <p>second tab</p>
-                <button id="next" onclick="next(1)">next</button>
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Village</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-min-container"></div>
             </div>
             <div class="min-tab" style="padding: 10px;">
                 <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>

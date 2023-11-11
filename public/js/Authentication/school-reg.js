@@ -146,6 +146,7 @@ fileInput.addEventListener("change", loadImage);
 chooseImgBtn.addEventListener("click", () => fileInput.click());
 
 
+
 showTab(currentTab);
 function showTab(n) {
     var x = document.getElementsByClassName("tab");
