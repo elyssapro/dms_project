@@ -423,7 +423,8 @@ main {
 
 #search-trades{
   padding: 8px 10px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.17);
+  border: 1px solid #6084c3;
+  /* box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.17); */
   /* box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27); */
   border-radius: 3px;
   z-index: 99;
@@ -550,6 +551,11 @@ input[ type = 'checkbox']:checked +  label {
   font-size: 18px;
   caret-color: #6084c3;
   
+}
+.location-input:valid,
+.location-input:not([value=""]) {
+  border: 2px solid rgba(10, 102, 25, 0.562);
+  color: rgba(10, 102, 25, 0.774) ;
 }
 
 #location-label {

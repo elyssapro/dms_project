@@ -91,7 +91,7 @@
             <!-- <div class="min-tab min-second-tab" style="padding: 10px;">
                 
 
-                <input type="text" id="search-trades" placeholder="Search for trades or combination...">
+                <input type="text" id="search-trades" placeholder="Search for trades or combination..." autofocus="true">
                 <div class="grid-container-select-class main-container-select-class">
             
                     <form action="/SelectClass" method="post">
@@ -2713,6 +2713,9 @@
 
 
 <script>
+
+// const inputFilled
+
     document.addEventListener('DOMContentLoaded', ()=> {
     const addCustomer = (fn) => (...args) => {
         setTimeout(()=> {
