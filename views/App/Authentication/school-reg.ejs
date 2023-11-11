@@ -80,7 +80,7 @@
                                 <div class="row">
                                     <input type="file" class="file-input" accept="image/*" hidden>
                                     <button class="choose-img">Choose Image</button>
-                                    <button class="save-img" onclick="next(1)">Next</button>
+                                    <button class="save-img" onclick="next(1)" accesskey="Q">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -2697,6 +2697,127 @@
                     <button class="submit-school-basic-info-button" onclick="next(1)">Next</button>
                 </div>
             </div> -->
+            <div class="min-tab min-fouth-tab" style="padding: 10px;">
+                <div class="min-min-container school-basic-info">
+                    <div class="school-basic-main-info school-basic-main-info-heading">
+                        <h3>Additional school manager information</h3>
+                    </div>
+                    <div class="school-basic-main-info school-basic-info-inputs">
+                        <div class="inputs-main-grid-display-container">
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Firstname</label>
+                            </div>
+
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Lastname</label>
+                            </div>
+
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Gender</label>
+                            </div>
+    
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Username</label>
+                            </div>
+                            
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Email</label>
+                            </div>
+                            <div class="location-inputs-div">
+                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <label id="location-label">Phone number</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-min-container account-setup">
+                    <div class="account-grid-setup account-setup-title">
+                        <h3>Create strong password</h3>
+                    </div>
+                    <div class="account-grid-setup password-input-container">
+
+                        <div class="location-inputs-div">
+                            <input type="password" id="admin-input-password generated-password" class="location-input admin-input-password" onkeyup="showPasswordIndicator()" required="" value="">
+                            <label id="location-label">Password </label>
+                        </div>
+
+                        <div class="password-indicator-container">
+
+                            <div class="password-indicator-content">
+                                <div class="password-indicator"><span class="pass-indicator">Weak</span> </div>
+                                <div class="password-indicator"><span class="pass-indicator">Good</span> </div>
+                                <div class="password-indicator"><span class="pass-indicator">Strong</span> </div>
+                            </div>
+
+                            <div class="check-password-requirements">&quest;</div>
+                            <div class="auto-generate-password" id="generate-password">Auto-generate strong password</div>
+                            <div class="password-generation" style="display: none;">
+                                <h2>Password Generator</h2>
+                                <div class="result-container">
+                                    <span id="result"></span>
+                            
+                                    <button class="btn" id="clipboard" style="display: none;">
+                                        Copy
+                                    </button>
+                                </div>
+                            
+                                <div class="settings" style="display: none;">
+                                    <div class="setting">
+                                        <label for="length">Password length</label>
+                                        <input type="number" id="length" min="8" max="10" value="8" />
+                                    </div>
+                            
+                                    <div class="setting">
+                                        <label for="uppercase">Include uppercase letters</label>
+                                        <input type="checkbox" id="uppercase" checked>
+                                    </div>
+                            
+                                    <div class="setting">
+                                        <label for="lowercase">Include lowercase letters</label>
+                                        <input type="checkbox" id="lowercase" checked>
+                                    </div>
+                            
+                                    <div class="setting">
+                                        <label for="numbers">Include numbers</label>
+                                        <input type="checkbox" id="numbers" checked>
+                                    </div>
+                            
+                                    <div class="setting">
+                                        <label for="symbols">Include symbols</label>
+                                        <input type="checkbox" id="symbols" checked>
+                                    </div>
+                                </div>
+                            
+                                <button class="btn btn-large" id="generate">
+                                    Generate Password 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="account-grid-setup">
+                        <div class="location-inputs-div">
+                            <input type="password" id="admin-input-password generated-password" class="location-input admin-input-password" onkeyup="showPasswordIndicator()" required="" value="">
+                            <label id="location-label">Confirm password</label>
+                        </div>
+
+                        <div class="check-password">
+                            <input class="checkPassword" type="checkbox" id="check-password-visibility">
+                            <label for="check-password-visibility" id="check-password-visibility-label">Show password</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="min-min-container submit-school-basic-info">
+                    <button class="submit-school-basic-info-button" onclick="next(1)">Finish</button>
+                </div>
+            </div>
+            
             <div class="min-tab" style="padding: 10px;">
                 <p><span onclick="next(-1)" style="margin-right: 1rem;" id="prev">Prev</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio consequatur quaerat voluptates vitae atque repellat necessitatibus ipsa laborum, a velit quis voluptatibus. Beatae, a perspiciatis impedit soluta, dignissimos enim tenetur modi esse ipsam exercitationem quaerat odio aspernatur culpa fuga provident. Quae facere necessitatibus dicta eius. Eveniet quaerat vitae quod ipsa laudantium esse deserunt corporis. Ea fugiat similique quod dolore, consequuntur eligendi dolorem eaque at, dicta ratione eum excepturi est repellendus. Rerum dolorem expedita, placeat voluptatem, illo non, nihil ipsa doloremque alias ex nisi quibusdam distinctio ratione eligendi eos beatae harum suscipit vitae facilis? Est dolores voluptates dolorem vero quas ipsam optio sint velit quo eius quaerat commodi qui accusamus et fugit expedita, corporis inventore similique aliquam nostrum fugiat quia quasi. Enim porro dignissimos ipsum qui deleniti aliquam cumque quia facilis quo nihil alias ab ut tempore nulla saepe mollitia, adipisci eos illo impedit itaque iusto earum explicabo neque natus! Reprehenderit dolore, ipsam rerum rem cupiditate neque voluptas ex modi iste.</p>
                 <p>second tab</p>
@@ -2717,6 +2838,125 @@
 <script>
 
 // const inputFilled
+
+    
+const resultEl = document.querySelector('.admin-input-password');
+const lengthEl = document.getElementById('length')
+const lowercaseEl = document.getElementById('lowercase')
+const uppercaseEl = document.getElementById('uppercase')
+const numberEl = document.getElementById('numbers')
+const symbolsEl = document.getElementById('symbols')
+const generateEl = document.getElementById('generate-password')
+const clipboardEl = document.getElementById('clipboard')
+
+// lengthEl.value = Math.floor(Math.random() * 2) + 8;
+
+const randomFunc = {
+    lower: getRandomLower,
+    upper: getRandomUpper,
+    number: getRandomNumber,
+    symbol: getRandomSymbols
+}
+
+generateEl.addEventListener('click', () => {
+    const length = +lengthEl.value;
+    const hasLower = lowercaseEl.checked;
+    const hasUpper = uppercaseEl.checked;
+    const hasNumber = numberEl.checked;
+    const hasSymbol = symbolsEl.checked;
+    
+    resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+    // console.log(generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length));
+})
+
+
+clipboardEl.addEventListener('click', function () {
+    const textarea = document.createElement('textarea');
+    const password = resultEl.innerText;
+
+    if(!password) {
+        return
+    }
+
+    textarea.value = password;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Password copied to clipboard!')
+})
+
+
+function generatePassword(lower, upper, number, symbol, length) {
+    /**
+     * 1. Init Password variable
+     * 2. Filter out unchecked types
+     * 3. Loop over length call generator function for each type
+     * 4. Add a final password to the password variable and return
+     */
+
+    let generatedPassword = '';
+    const typeCount = lower + upper + number + symbol;
+    // console.log('typecount ', typeCount);
+
+    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
+    // console.log('TypesArr ', typesArr);
+
+    if(typeCount === 0) {
+        return '';
+    }
+
+    for(let i = 0; i < length; i += typeCount) {
+        typesArr.forEach(type => {
+            const funcName = Object.keys(type) [0];
+            // console.log('funcName ', funcName);
+            generatedPassword += randomFunc[funcName]();
+        })
+    }
+
+    const finalPassword = generatedPassword.slice(0, length);
+    return finalPassword;
+}
+
+/**
+ * Generator Functions - http://www.net-comber.com/charset.html
+ */
+
+function getRandomLower() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+}
+
+function getRandomUpper () {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+function getRandomNumber () {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+}
+
+function getRandomSymbols () {
+    const symbols = '!@#$%^&*(){}[]=<>/,.';
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+
+    setInterval(() => {
+        const adminInputPassword = document.querySelector('.admin-input-password');
+        const passIndicator = document.querySelectorAll('.pass-indicator');
+
+        for(let i = 0; i < passIndicator.length; i++ ) {
+            if(adminInputPassword.value.length >= 1) {
+                passIndicator[i].classList.add("animate");
+                passIndicator[i].style.opacity = "1";
+            } else{
+                passIndicator[i].classList.remove("animate");
+                passIndicator[i].style.opacity = "0";
+            }
+        }
+    }, 1);
+
+    
 
     document.addEventListener('DOMContentLoaded', ()=> {
     const addCustomer = (fn) => (...args) => {

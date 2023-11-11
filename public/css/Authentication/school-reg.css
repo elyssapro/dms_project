@@ -443,7 +443,7 @@ main {
 
 
 
-input[ type = 'checkbox']{
+input[ type = 'checkbox']:not(.checkPassword){
   display: none;
 }
 
@@ -465,7 +465,7 @@ input.inputType{
 
 
 
-input[ type = 'checkbox']:checked +  label {
+input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label) {
  background-color: lightslategrey;
  color: white;
 }
@@ -627,6 +627,131 @@ input[ type = 'checkbox']:checked +  label {
   /* opacity: .5; */
   cursor: pointer;
 }
+
+
+.min-fouth-tab{
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 1fr 1fr [col-3] 40px;
+  gap: 8px;
+}
+
+.account-setup{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px minmax(90px, 100px) 1fr;
+}
+
+.account-setup-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-setup-title h3{
+  font-weight: 500;
+}
+
+.account-grid-setup{
+  width: 100%;
+  padding: 10px;
+}
+/* 
+.password-input-container{
+  border: 1px solid;
+} */
+
+.password-indicator-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  top: -20px;
+}
+
+.password-indicator-content{
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  pointer-events: none;
+}
+
+.pass-indicator{
+  padding: 1px 14px;
+  background-color: lightslategrey;
+  border-radius: 2px;
+  color: white;
+  opacity: 0;
+  font-size: 13px;  
+}
+
+.admin-input-password{
+  z-index: 99;
+}
+
+.animate{
+  position: relative;
+  animation: animate .4s ease forwards;
+}
+
+@keyframes animate{
+  0% {
+    top: -32px;
+  z-index: -99;
+
+  }
+
+  100%{
+    top: 0px;
+  }
+}
+
+.check-password-requirements{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: rgb(219, 63, 94);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+}
+
+
+.check-password-requirements:hover{
+  background-color: crimson;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.auto-generate-password{
+  padding: 2px 10px;
+  background-color: #092e6d83;
+  color: white;
+  border-radius: 3px;
+  transition: .2s;
+  font-size: 13px;
+}
+
+.auto-generate-password:hover{
+  background-color: #536fa0;
+  cursor: pointer;
+}
+
+.check-password{
+  padding: 2px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#check-password-visibility{
+  margin-right: .2rem;
+}
+
 
 @media (max-width: 850px) {
     .box {
