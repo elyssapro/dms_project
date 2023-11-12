@@ -277,7 +277,7 @@ function validateAdminInputs() {
     for(let i = 0; i < adminAddInfoInput.length; i++) {
         if(adminAddInfoInput[i].value == '') {
             adminAddInfoInput[i].classList.add('invalid-admin-validation');
-            return  validateMessage('Please fill the required inputs')
+            return  validateMessage( 'Message Validation', 'Please fill the required inputs')
         } 
     }
    const emailValue = adminEmailInput.value;
@@ -287,20 +287,22 @@ function validateAdminInputs() {
    const adminConfirmPassword = document.querySelector('.admin-confirm-password');
    
    if(adminFirstPassword.value !== adminConfirmPassword.value) {
-    validateMessage('Password must match')
+    validateMessage( 'Message Validation', 'Password must match')
    } else if(adminFirstPassword.value == '' || adminConfirmPassword.value == '') {
-    validateMessage('Provide a password');
-   } else if(adminPhoneNumberInput.value.length >= 9) {
-    validateMessage('Phone number can not exceed 9 numbers')
+    validateMessage( 'Message Validation', 'Provide a password');
+   } else if(adminPhoneNumberInput.value.length > 9) {
+    validateMessage( 'Message Validation', 'Phone number can not exceed 9 numbers')
+    } else if(adminPhoneNumberInput.value.length < 9) {
+        validateMessage( 'Message Validation', 'Phone number can not go below 9 numbers')
     } else {
-    return;
-    } 
+        bringProfileAnimation('Saving admin full profile information...', 'Registering your school in DMS...', "Saving your selected class and trades / combinations...", 'Creating your workspace...', 'Setting up your default features...', 'Activating your account...', 'Configuring your default settings...', 'Preparing your admin dashboard...', 'Ready to go...');
+    }
 
 
     if(validateEmail(emailValue)) {
         return;
     } else {
-        validateMessage('Please include an \'@\' and \' . \' in the email address to continue.');
+        validateMessage( 'Message Validation', 'Please include an \'@\' and \' . \' in the email address to continue.');
     }
     
     function validateEmail (email) {
@@ -309,8 +311,181 @@ function validateAdminInputs() {
     
 }
 
-const validateMessage = (messageInfo) => {
+setInterval(() => {
+    showPasswordIndicator();
+}, 1);
+
+function showPasswordIndicator(){
+    const adminFirstPassword = document.querySelector('.admin-first-password');
+    const passwordIndicatorWeak = document.querySelector('.pass-indicator-weak');
+    const passwordIndicatorGood = document.querySelector('.pass-indicator-good');
+    const passwordIndicatorStrong = document.querySelector('.pass-indicator-strong');
+
+    // if(adminFirstPassword.value == )
+    var UpperCaseLetters = /[A-Z]/g;
+    var LowerCaseLetters = /[a-z]/g;
+    var Numbers = /[0-9]/g;
+    var symbols = /[!@#$%^&*(),.<>{}?]/g;
+
+    if(adminFirstPassword.value.match(UpperCaseLetters) ||
+     adminFirstPassword.value.match(LowerCaseLetters) ||
+      adminFirstPassword.value.match(Numbers) ||
+       adminFirstPassword.value.match(symbols)) {
+
+        passwordIndicatorWeak.classList.add("animate");
+        passwordIndicatorWeak.style.opacity = "1";
+
+    } else {
+        passwordIndicatorWeak.style.opacity = "0";
+    }
+    
+
+    
+    if(adminFirstPassword.value.match(UpperCaseLetters) && adminFirstPassword.value.match(LowerCaseLetters) ||
+     adminFirstPassword.value.match(UpperCaseLetters) && adminFirstPassword.value.match(Numbers) || 
+     adminFirstPassword.value.match(UpperCaseLetters) && adminFirstPassword.value.match(symbols) || 
+     adminFirstPassword.value.match(LowerCaseLetters) && adminFirstPassword.value.match(symbols) ||
+     adminFirstPassword.value.match(LowerCaseLetters) && adminFirstPassword.value.match(Numbers) || 
+     adminFirstPassword.value.match(Numbers) && adminFirstPassword.value.match(Symbol) || 
+     adminFirstPassword.value.length >= 8) {
+        passwordIndicatorGood.classList.add("animate");
+        passwordIndicatorGood.style.opacity = "1";
+        passwordIndicatorWeak.classList.add("animate");
+        passwordIndicatorWeak.style.opacity = "1";
+    } else {
+        passwordIndicatorGood.style.opacity = "0";
+    }
+
+
+    if(adminFirstPassword.value.match(UpperCaseLetters) &&
+     adminFirstPassword.value.match(LowerCaseLetters) &&
+      adminFirstPassword.value.match(Numbers) &&
+      adminFirstPassword.value.match(symbols) &&
+       adminFirstPassword.value.length >= 8) {
+
+        passwordIndicatorStrong.classList.add("animate");
+        passwordIndicatorStrong.style.opacity = "1";
+
+    } else {
+        passwordIndicatorStrong.style.opacity = "0";
+    }
+    
+    
+
+}
+
+
+function bringProfileAnimation(contentOne, contentTwo, contentThree, contentFour, contentFive, contentSix, contentSeven, contentEight, contentNine) {
+    document.querySelector('.main-loading-content').style.display = 'block';
+    const contentsOne = (fn) => (...args) => {
+        document.getElementById('displayer-screen').innerHTML = contentOne;
+        return fn(...args);
+    }
+
+    const contentsTwo = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentTwo;
+            return fn(...args)
+        }, 4000);
+    }
+
+
+    const contentsThree = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentThree;
+            return fn(...args)
+        }, 4000);
+    }
+
+
+    const contentsFour = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentFour;
+            return fn(...args)
+        }, 4000);
+    }
+
+    
+
+
+    const contentsFive = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentFive;
+            return fn(...args)
+        }, 4000);
+    }
+
+
+
+    const contentsSix = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentSix;
+            return fn(...args)
+        }, 4000);
+    }
+
+
+
+    const contentsSeven = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentSeven;
+            return fn(...args)
+        }, 4000);
+    }
+
+
+
+    const contentsEight = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentEight;
+            return fn(...args)
+        }, 4000);
+    }
+
+
+
+    const contentsNine = (fn) => (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = contentNine;
+            return fn(...args)
+        }, 4000);
+    }
+
+  
+    let FinilStep = (...args) => {
+        setTimeout(() => {
+            document.getElementById('displayer-screen').innerHTML = `${[args].toString()}`;
+            setTimeout(() => {
+                document.querySelector('.main-loading-content').classList.add('close-loader-animation');
+            }, 4000);
+            setTimeout(() => {
+                const hrefLink = document.createElement('button');
+                hrefLink.setAttribute('onclick', 'next(1)');
+                hrefLink.click();
+            }, 5000);
+        }, 2000);
+        
+    }
+
+    FinilStep = (contentsNine(FinilStep))
+    FinilStep = (contentsEight(FinilStep))
+    FinilStep = (contentsSeven(FinilStep))
+    FinilStep = (contentsFive(FinilStep))
+    FinilStep = (contentsSix(FinilStep));
+    FinilStep = (contentsFive(FinilStep));
+    FinilStep = (contentsFour(FinilStep))
+    FinilStep = (contentsThree(FinilStep))
+    FinilStep = (contentsTwo(FinilStep))
+    FinilStep = (contentsOne(FinilStep))
+
+    FinilStep('Wait a second...')
+
+}
+
+
+const validateMessage = (messageTitle, messageInfo) => {
     document.querySelector('.admin-verification-message-container').style.display = 'block';
+    document.getElementById('MessageTitle').innerHTML = messageTitle;
     document.getElementById('MessageContents').innerHTML = messageInfo;
     setTimeout(() => {
     document.querySelector('.admin-verification-message-content').classList.add('close-admin-validation-message-container')
@@ -318,7 +493,7 @@ const validateMessage = (messageInfo) => {
         document.querySelector('.admin-verification-message-content').classList.remove('close-admin-validation-message-container')
             document.querySelector('.admin-verification-message-container').style.display = 'none';
     }, 500);
-    }, 3000);
+    }, 4000);
 }
 
 
@@ -335,22 +510,12 @@ function showAdminPassword() {
 }
 
 
-    setInterval(() => {
-        const adminInputPassword = document.querySelector('.admin-input-password');
-        const passIndicator = document.querySelectorAll('.pass-indicator');
-
-        for(let i = 0; i < passIndicator.length; i++ ) {
-            if(adminInputPassword.value.length >= 1) {
-                passIndicator[i].classList.add("animate");
-                passIndicator[i].style.opacity = "1";
-            } else{
-                passIndicator[i].classList.remove("animate");
-                passIndicator[i].style.opacity = "0";
-            }
-        }
-    }, 1);
 
 
+
+    const showPasswordRequirement = () => {
+        validateMessage('Password must cantain the followig', 'Uppercase  letters' + '<br>' + 'Lowercase letters' + '<br>' +  'Numbers' + '<br>' + 'Symbols' + '<br>' + 'Atleast 8 characters');
+    }
 
 
 showTab(currentTab);

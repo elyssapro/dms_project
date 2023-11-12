@@ -2708,7 +2708,7 @@
                     <div class="admin-verification-message-container">
                         <div class="admin-verification-message-content">
                           <div class="message-title">
-                            <p>Validation Message</p>
+                            <p id="MessageTitle"></p>
                             <span>&times;</span>
                           </div>
                           <div class="message-body">
@@ -2719,6 +2719,24 @@
                           </div>
                         </div>
                     </div>
+
+
+                    <div class="main-loading-content">
+                        <div class="container-loading">
+                          <div class="loader-item main-loader-container">
+                              <span> <svg class="svg-main-loader">
+                                  <circle class="svg-main-loader-circle" cx="70" cy="70" r="20"></circle>
+                              </svg></span>
+                          </div>
+                  
+                          <div class="loader-item loader-content">
+                              <p id="displayer-screen"></p>
+                          </div>
+                        </div>
+                    </div>
+
+
+
                     <div class="school-basic-main-info school-basic-info-inputs">
 
                         <div class="inputs-main-grid-display-container">
@@ -2777,12 +2795,12 @@
                         <div class="password-indicator-container">
 
                             <div class="password-indicator-content">
-                                <div class="password-indicator"><span class="pass-indicator">Weak</span> </div>
-                                <div class="password-indicator"><span class="pass-indicator">Good</span> </div>
-                                <div class="password-indicator"><span class="pass-indicator">Strong</span> </div>
+                                <div class="password-indicator"><span class="pass-indicator pass-indicator-weak">Weak</span> </div>
+                                <div class="password-indicator"><span class="pass-indicator pass-indicator-good">Good</span> </div>
+                                <div class="password-indicator"><span class="pass-indicator pass-indicator-strong">Strong</span> </div>
                             </div>
 
-                            <div class="check-password-requirements">&quest;</div>
+                            <div class="check-password-requirements" onclick="showPasswordRequirement()">&quest;</div>
                             <div class="auto-generate-password" id="generate-password">Auto-generate strong password</div>
                             <div class="password-generation" style="display: none;">
                                 <h2>Password Generator</h2>
