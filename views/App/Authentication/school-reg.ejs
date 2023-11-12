@@ -1,5 +1,5 @@
 <div class="box">
-    <!-- <div class="tab first-section">
+    <div class="tab first-section">
        <div class="admin-basic-info">
             <div class="admin-main-info">
                 <div class="skeleton skeleton-text"></div>
@@ -16,7 +16,7 @@
                 <button onclick="nextPrev(1)">Agree Terms & Condition</button>
             </div>
        </div>
-    </div> -->
+    </div>
     
     <div class="tab second-section">
         <div class="grid-second">
@@ -88,7 +88,7 @@
                 </div>
             </div>
 
-            <!-- <div class="min-tab min-second-tab" style="padding: 10px;">
+            <div class="min-tab min-second-tab" style="padding: 10px;">
                 
 
                 <input type="text" id="search-trades" placeholder="Search for trades or combination..." autofocus="true">
@@ -534,8 +534,8 @@
                                         <input class="inputType" type="checkbox" name="Class" value="S4 PCM F">
                                         <label id="classLabel">F</label>
                         
-                                        <input type="checkbox" name="classSelectionPCM" id="s5pcb" value="Senior Five PCM">
-                                        <label class="accordion" for="s5pcb">S5 PCM</label>
+                                        <input type="checkbox" name="classSelectionPCM" id="s5pcm" value="Senior Five PCM">
+                                        <label class="accordion" for="s5pcm">S5 PCM</label>
                         
                                         <input class="inputType" type="checkbox" name="Class" value="S5 PCM A">
                                         <label id="classLabel">A</label>
@@ -2614,10 +2614,11 @@
                 <button class="submit-class-form" onclick="next(1)">Submit</button>
 
 
-            </div> -->
+            </div>
 
             
-            <!-- <div class="min-tab min-third-tab" style="padding: 10px;">
+            <div class="min-tab min-third-tab" style="padding: 10px;">
+                
                
                 <div class="min-min-container school-basic-info">
                     <div class="school-basic-main-info school-basic-main-info-heading">
@@ -2626,31 +2627,31 @@
                     <div class="school-basic-main-info school-basic-info-inputs">
                         <div class="inputs-main-grid-display-container">
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Country</label>
                             </div>
 
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Province</label>
                             </div>
     
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">District</label>
                             </div>
                             
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Sector</label>
                             </div>
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Cell</label>
                             </div>
                             
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Village</label>
                             </div>
                         </div>
@@ -2663,31 +2664,31 @@
                     <div class="school-basic-main-info school-basic-info-inputs">
                         <div class="inputs-main-grid-display-container">
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Country</label>
                             </div>
 
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Province</label>
                             </div>
     
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">District</label>
                             </div>
                             
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Sector</label>
                             </div>
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Cell</label>
                             </div>
 
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input" required="" value="">
                                 <label id="location-label">Village</label>
                             </div>
                         </div>
@@ -2696,40 +2697,56 @@
                 <div class="min-min-container submit-school-basic-info">
                     <button class="submit-school-basic-info-button" onclick="next(1)">Next</button>
                 </div>
-            </div> -->
+            </div>
             <div class="min-tab min-fouth-tab" style="padding: 10px;">
                 <div class="min-min-container school-basic-info">
                     <div class="school-basic-main-info school-basic-main-info-heading">
                         <h3>Additional school manager information</h3>
                     </div>
+
+                    <div class="admin-verification-message-container">
+                        <div class="admin-verification-message-content">
+                          <div class="message-title">
+                            <p>Validation Message</p>
+                            <span>&times;</span>
+                          </div>
+                          <div class="message-body">
+                            <p id="MessageContents"></p>
+                          </div>
+                          <div class="message-footer">
+                            <a href="javascript:void(0)">Get help</a>
+                          </div>
+                        </div>
+                    </div>
                     <div class="school-basic-main-info school-basic-info-inputs">
+
                         <div class="inputs-main-grid-display-container">
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input admin-add-info-input admin-firstname-input" required="" value="">
                                 <label id="location-label">Firstname</label>
                             </div>
 
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input admin-add-info-input admin-lastname-input" required="" value="">
                                 <label id="location-label">Lastname</label>
                             </div>
 
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input admin-add-info-input admin-gender-name-input" required="" value="">
                                 <label id="location-label">Gender</label>
                             </div>
     
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input admin-add-info-input admin-username-name-input" required="" value="">
                                 <label id="location-label">Username</label>
                             </div>
                             
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input admin-add-info-input admin-email-input" required="" value="">
                                 <label id="location-label">Email</label>
                             </div>
                             <div class="location-inputs-div">
-                                <input type="text" id="school-Province" class="location-input" required="" value="">
+                                <input type="text"  class="location-input admin-add-info-input admin-phone-number-input" required="" value="">
                                 <label id="location-label">Phone number</label>
                             </div>
                         </div>
@@ -2742,7 +2759,7 @@
                     <div class="account-grid-setup password-input-container">
 
                         <div class="location-inputs-div">
-                            <input type="password" id="admin-input-password generated-password" class="location-input admin-input-password" onkeyup="showPasswordIndicator()" required="" value="">
+                            <input type="password" class="location-input admin-input-password admin-first-password" onkeyup="showPasswordIndicator()" required="" value="">
                             <label id="location-label">Password </label>
                         </div>
 
@@ -2769,7 +2786,7 @@
                                 <div class="settings" style="display: none;">
                                     <div class="setting">
                                         <label for="length">Password length</label>
-                                        <input type="number" id="length" min="8" max="10" value="8" />
+                                        <input type="number" id="length" min="8" max="20" />
                                     </div>
                             
                                     <div class="setting">
@@ -2802,19 +2819,21 @@
 
                     <div class="account-grid-setup">
                         <div class="location-inputs-div">
-                            <input type="password" id="admin-input-password generated-password" class="location-input admin-input-password" onkeyup="showPasswordIndicator()" required="" value="">
+                            <input type="password" class="location-input admin-input-password admin-confirm-password" onkeyup="showPasswordIndicator()" required="" value="">
                             <label id="location-label">Confirm password</label>
                         </div>
 
                         <div class="check-password">
-                            <input class="checkPassword" type="checkbox" id="check-password-visibility">
+                            <input class="checkPassword" type="checkbox" id="check-password-visibility" onclick="showAdminPassword()">
                             <label for="check-password-visibility" id="check-password-visibility-label">Show password</label>
                         </div>
                     </div>
+
+
                 </div>
 
                 <div class="min-min-container submit-school-basic-info">
-                    <button class="submit-school-basic-info-button" onclick="next(1)">Finish</button>
+                    <button class="submit-school-basic-info-button final-submit" onclick="validateAdminInputs()" accesskey="W">Finish</button>
                 </div>
             </div>
             
@@ -2834,192 +2853,3 @@
     </div>
 </div>
 
-
-<script>
-
-// const inputFilled
-
-    
-const resultEl = document.querySelector('.admin-input-password');
-const lengthEl = document.getElementById('length')
-const lowercaseEl = document.getElementById('lowercase')
-const uppercaseEl = document.getElementById('uppercase')
-const numberEl = document.getElementById('numbers')
-const symbolsEl = document.getElementById('symbols')
-const generateEl = document.getElementById('generate-password')
-const clipboardEl = document.getElementById('clipboard')
-
-// lengthEl.value = Math.floor(Math.random() * 2) + 8;
-
-const randomFunc = {
-    lower: getRandomLower,
-    upper: getRandomUpper,
-    number: getRandomNumber,
-    symbol: getRandomSymbols
-}
-
-generateEl.addEventListener('click', () => {
-    const length = +lengthEl.value;
-    const hasLower = lowercaseEl.checked;
-    const hasUpper = uppercaseEl.checked;
-    const hasNumber = numberEl.checked;
-    const hasSymbol = symbolsEl.checked;
-    
-    resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
-    // console.log(generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length));
-})
-
-
-clipboardEl.addEventListener('click', function () {
-    const textarea = document.createElement('textarea');
-    const password = resultEl.innerText;
-
-    if(!password) {
-        return
-    }
-
-    textarea.value = password;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    textarea.remove();
-    alert('Password copied to clipboard!')
-})
-
-
-function generatePassword(lower, upper, number, symbol, length) {
-    /**
-     * 1. Init Password variable
-     * 2. Filter out unchecked types
-     * 3. Loop over length call generator function for each type
-     * 4. Add a final password to the password variable and return
-     */
-
-    let generatedPassword = '';
-    const typeCount = lower + upper + number + symbol;
-    // console.log('typecount ', typeCount);
-
-    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
-    // console.log('TypesArr ', typesArr);
-
-    if(typeCount === 0) {
-        return '';
-    }
-
-    for(let i = 0; i < length; i += typeCount) {
-        typesArr.forEach(type => {
-            const funcName = Object.keys(type) [0];
-            // console.log('funcName ', funcName);
-            generatedPassword += randomFunc[funcName]();
-        })
-    }
-
-    const finalPassword = generatedPassword.slice(0, length);
-    return finalPassword;
-}
-
-/**
- * Generator Functions - http://www.net-comber.com/charset.html
- */
-
-function getRandomLower() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
-}
-
-function getRandomUpper () {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-
-function getRandomNumber () {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
-}
-
-function getRandomSymbols () {
-    const symbols = '!@#$%^&*(){}[]=<>/,.';
-    return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
-
-
-    setInterval(() => {
-        const adminInputPassword = document.querySelector('.admin-input-password');
-        const passIndicator = document.querySelectorAll('.pass-indicator');
-
-        for(let i = 0; i < passIndicator.length; i++ ) {
-            if(adminInputPassword.value.length >= 1) {
-                passIndicator[i].classList.add("animate");
-                passIndicator[i].style.opacity = "1";
-            } else{
-                passIndicator[i].classList.remove("animate");
-                passIndicator[i].style.opacity = "0";
-            }
-        }
-    }, 1);
-
-    
-
-    document.addEventListener('DOMContentLoaded', ()=> {
-    const addCustomer = (fn) => (...args) => {
-        setTimeout(()=> {
-            document.getElementById('displayer').innerHTML = 'Fetching basic school information...';
-            return fn(...args);
-        }, 500)
-    }
-    
-    let completeCustomer = (...args) => {
-        setTimeout(()=> {
-            document.getElementById('displayer').innerHTML = `Processing your ${[args].toString()} information...`;
-        }, 1500);
-    }
-    
-    completeCustomer = (addCustomer(completeCustomer));
-    completeCustomer('school');
-    
-    
-    setTimeout(() => {
-        document.querySelector('.flashContainer').classList.add('closeAnimation');
-        setTimeout(()=> {
-            document.querySelector('.flash').style.display = 'none';
-            document.querySelector('.mainModal').style.display = 'block';
-                }, 300)
-    }, 5000)
-    
-    
-    setTimeout(()=> {
-        document.querySelector('.flash').style.display = 'block';
-    }, 500)
-})
-
-
-const mainContainer = document.querySelector('.main-container');
-const mainModalContent = document.querySelector('.mainModalContent');
-const closeMainModal = document.getElementById('closeMainModal');
-
-function myFunction(){
-    mainModalContent.classList.add('closeAnimation');
-    mainContainer.classList.add('main-containers');
-    setTimeout(()=> {
-        document.querySelector('.mainModal').style.display = 'none';
-        document.querySelector('.formAnimation').style.display = 'block';
-    }, 300)
-}
-
-setTimeout(()=> {
-    myFunction();
-}, 18000)
-
-    var acc = document.getElementsByClassName('accordion');
-    var i;
-
-    for(i = 0; i < acc.length; i++) {
-        acc[i].addEventListener('click', function() {
-            this.classList.toggle('active');
-            var panel = this.nextElementSibling;
-            if(panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else  {
-                panel.style.maxHeight = panel.scrollHeight + 'px';
-            }
-        })
-    }
-</script>

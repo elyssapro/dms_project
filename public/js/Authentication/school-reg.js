@@ -146,22 +146,208 @@ fileInput.addEventListener("change", loadImage);
 chooseImgBtn.addEventListener("click", () => fileInput.click());
 
 
+var acc = document.getElementsByClassName('accordion');
+    var i;
+
+    for(i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', function() {
+            this.classList.toggle('active');
+            var panel = this.nextElementSibling;
+            if(panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else  {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+        })
+    }
+
+
+const resultEl = document.querySelector('.admin-input-password');
+const lengthEl = document.getElementById('length')
+const lowercaseEl = document.getElementById('lowercase')
+const uppercaseEl = document.getElementById('uppercase')
+const numberEl = document.getElementById('numbers')
+const symbolsEl = document.getElementById('symbols')
+const generateEl = document.getElementById('generate-password')
+const clipboardEl = document.getElementById('clipboard')
+const adminAddInfoInput = document.querySelectorAll('.admin-add-info-input');
+const adminFirstnameInput = document.querySelector('.admin-firstname-input')
+const adminLastNameInput = document.querySelector('.admin-lastname-input')
+const adminGenderInput = document.querySelector('.admin-gender-input')
+const adminUsernameInput = document.querySelector('.admin-username-input')
+const adminEmailInput = document.querySelector('.admin-email-input')
+const adminPhoneNumberInput = document.querySelector('.admin-phone-number-input')
+
+lengthEl.value = Math.floor(Math.random() * 12) + 8;
+
+const randomFunc = {
+    lower: getRandomLower,
+    upper: getRandomUpper,
+    number: getRandomNumber,
+    symbol: getRandomSymbols
+}
+
+generateEl.addEventListener('click', () => {
+    const length = +lengthEl.value;
+    const hasLower = lowercaseEl.checked;
+    const hasUpper = uppercaseEl.checked;
+    const hasNumber = numberEl.checked;
+    const hasSymbol = symbolsEl.checked;
+    
+    resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+})
+
+
+clipboardEl.addEventListener('click', function () {
+    const textarea = document.createElement('textarea');
+    const password = resultEl.innerText;
+
+    if(!password) {
+        return
+    }
+
+    textarea.value = password;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Password copied to clipboard!')
+})
+
+
+function generatePassword(lower, upper, number, symbol, length) {
+    /**
+     * 1. Init Password variable
+     * 2. Filter out unchecked types
+     * 3. Loop over length call generator function for each type
+     * 4. Add a final password to the password variable and return
+     */
+
+    let generatedPassword = '';
+    const typeCount = lower + upper + number + symbol;
+    // console.log('typecount ', typeCount);
+
+    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
+    // console.log('TypesArr ', typesArr);
+
+    if(typeCount === 0) {
+        return '';
+    }
+
+    for(let i = 0; i < length; i += typeCount) {
+        typesArr.forEach(type => {
+            const funcName = Object.keys(type) [0];
+            // console.log('funcName ', funcName);
+            generatedPassword += randomFunc[funcName]();
+        })
+    }
+
+    const finalPassword = generatedPassword.slice(0, length);
+    return finalPassword;
+}
+
+/**
+ * Generator Functions - http://www.net-comber.com/charset.html
+ */
+
+function getRandomLower() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+}
+
+function getRandomUpper () {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+function getRandomNumber () {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+}
+
+function getRandomSymbols () {
+    const symbols = '!@#$%^&*(){}[]=<>/,.';
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+function validateAdminInputs() {
+    const adminFirstPassword = document.querySelector('.admin-first-password');
+    const adminConfirmPassword = document.querySelector('.admin-confirm-password');
+
+    if(adminFirstPassword.value !== adminConfirmPassword.value) {
+    validateMessage('Password match')
+   } else {
+    return;
+   }
+    
+
+    for(let i = 0; i < adminAddInfoInput.length; i++) {
+        if(adminAddInfoInput[i].value == '') {
+            adminAddInfoInput[i].classList.add('invalid-admin-validation');
+            validateMessage('Please fill the required inputs')
+        } 
+    }
+    const emailValue = adminEmailInput.value;
+
+   function validateEmail (email) {
+    return /\S+@\S+\.\S+/.test(email);
+   }
+
+   if(validateEmail(emailValue)) {
+    return;
+   } else {
+       validateMessage('Please include an \'@\' and \' . \' in the email address to continue.');
+   }
+
+
+}
+
+const validateMessage = (messageInfo) => {
+    document.querySelector('.admin-verification-message-container').style.display = 'block';
+    document.getElementById('MessageContents').innerHTML = messageInfo;
+    setTimeout(() => {
+    document.querySelector('.admin-verification-message-content').classList.add('close-admin-validation-message-container')
+    setTimeout(() => {
+        document.querySelector('.admin-verification-message-content').classList.remove('close-admin-validation-message-container')
+            document.querySelector('.admin-verification-message-container').style.display = 'none';
+    }, 500);
+    }, 2000);
+}
+
+
+
+function showAdminPassword() {
+    const resultEl = document.querySelectorAll('.admin-input-password');
+    for(let i = 0; i < resultEl.length; i++) {
+        if(resultEl[i].type === 'password') {
+            resultEl[i].type = 'text';
+        } else {
+            resultEl[i].type = 'password';
+        }
+    }
+}
+
+
+    setInterval(() => {
+        const adminInputPassword = document.querySelector('.admin-input-password');
+        const passIndicator = document.querySelectorAll('.pass-indicator');
+
+        for(let i = 0; i < passIndicator.length; i++ ) {
+            if(adminInputPassword.value.length >= 1) {
+                passIndicator[i].classList.add("animate");
+                passIndicator[i].style.opacity = "1";
+            } else{
+                passIndicator[i].classList.remove("animate");
+                passIndicator[i].style.opacity = "0";
+            }
+        }
+    }, 1);
+
+
+
 
 showTab(currentTab);
 function showTab(n) {
     var x = document.getElementsByClassName("tab");
     x[n].style.display = "grid";
-    if (n == 0) {
-        document.getElementById("prevBtn").style.display = "none";
-    } else {
-        document.getElementById("prevBtn").style.display = "inline";
-    }
-    if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
-    } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-    }
-    fixStepIndicator(n)
 }
 
 function nextPrev(n) {
@@ -170,5 +356,6 @@ function nextPrev(n) {
     currentTab = currentTab + n;
     showTab(currentTab);
 }
+
 
 

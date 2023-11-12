@@ -36,7 +36,7 @@ main {
   height: 640px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+  box-shadow: -10px 60px 40px 20px rgba(0, 0, 0, 0.17);
   overflow: hidden;
   display: grid;
 }
@@ -549,7 +549,7 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   border: 1px solid #aaa;
   outline: none;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 14px;
   caret-color: #6084c3;
   
 }
@@ -564,7 +564,7 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   position: relative;
   pointer-events: none;
   left: 5px;
-  top: -35px;
+  top: -32px;
   transition: .2s;
   padding-left: 10px;
 }
@@ -596,6 +596,76 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   padding: 10px;
 }
 
+.admin-verification-message-container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.07);
+  z-index: 99;
+  display: none;
+}
+
+.admin-verification-message-content{
+  position: relative;
+  top: -100px;
+  background-color: white;
+  margin: auto;
+  padding: 10px;
+  width: 40%;
+  min-height: 100px;
+  min-width: 360px;
+  border-radius: 4px;
+  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 2fr 20px;
+  gap: 5px;
+  animation: animate-admin-validation-message .5s ease forwards;
+}
+
+
+@keyframes animate-admin-validation-message{
+  0%{opacity: 0;}
+  100%{transform: translateY(300px); opacity: 1;}
+}
+
+
+
+.close-admin-validation-message-container{
+  position: relative;
+  animation: close-validation-message 1s ease forwards;
+}
+
+@keyframes close-validation-message{
+  0%{transform: translateY(300px);}
+  100%{transform: translateY(-200px);}
+}
+
+.message-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-title span {
+  font-size: 25px;
+  float: right;
+}
+
+.message-title p{
+  font-weight: 520;
+  /* text-align:  center; */
+}
+
+.message-body p{
+  font-size: 14px;
+}
+
+.message-footer a{
+  float: right;
+  font-size: 13px;
+}
+
 .school-basic-main-info-heading h3{
   font-weight: 500;
   text-align: center;
@@ -617,9 +687,9 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
 }
 
 .submit-school-basic-info-button{
-  padding: 8px 20px;
+  padding: 6px 20px;
   border: 1px solid #aaa;
-  background-color: #536fa0;
+  background-color: #1474f1;
   color: white;
   border-radius: 3px;
   width: 50%;
@@ -628,11 +698,18 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   cursor: pointer;
 }
 
+.final-submit{
+  /* opacity: .5; */
+  /* cursor: not-allowed; */
+}
+
+
+
 
 .min-fouth-tab{
   width: 100%;
   height: 100%;
-  grid-template-rows: 1fr 1fr [col-3] 40px;
+  grid-template-rows: 1fr 1fr [col-3] 50px;
   gap: 8px;
 }
 
@@ -656,10 +733,25 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   width: 100%;
   padding: 10px;
 }
-/* 
-.password-input-container{
-  border: 1px solid;
-} */
+
+.admin-add-info-input{
+  /* border: 1px solid red; */
+}
+
+.invalid-admin-validation{
+  border: 1.5px solid crimson;
+  
+}
+
+.invalid-admin-validation ~ #location-label{
+  /* color: #7288d1e3; */
+  color: crimson;
+  font-size: 14px;
+  top: -60px;
+  left: 6px;
+  background-color: white;
+  padding: 0;
+}
 
 .password-indicator-container{
   width: 100%;
@@ -758,6 +850,7 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
     main{
       padding: 2px;
     }
+
     .box {
       height: auto;
       max-width: 550px;
