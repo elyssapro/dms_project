@@ -510,7 +510,24 @@ function showAdminPassword() {
 }
 
 
+const allLocationalInputs = document.querySelectorAll('.location-input');
+for(let i = 0; i < allLocationalInputs.length; i++) {
+    allLocationalInputs[i].addEventListener('keyup', (e) => {
+        if(e.keyCode == 13) {
+            const nextInput = allLocationalInputs[i + 1];
+            if(nextInput.value != '') {
+                allLocationalInputs[i + 2].focus();
+            } else {
+                nextInput.focus();
+            }
+        } 
 
+        // console.log
+
+        
+    })
+}
+    
 
 
     const showPasswordRequirement = () => {
