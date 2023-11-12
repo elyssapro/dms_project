@@ -181,7 +181,6 @@ const adminLastNameInput = document.querySelector('.admin-lastname-input')
 const adminGenderInput = document.querySelector('.admin-gender-input')
 const adminUsernameInput = document.querySelector('.admin-username-input')
 const adminEmailInput = document.querySelector('.admin-email-input')
-const adminPhoneNumberInput = document.querySelector('.admin-phone-number-input')
 
 lengthEl.value = Math.floor(Math.random() * 12) + 8;
 
@@ -278,21 +277,25 @@ function validateAdminInputs() {
     for(let i = 0; i < adminAddInfoInput.length; i++) {
         if(adminAddInfoInput[i].value == '') {
             adminAddInfoInput[i].classList.add('invalid-admin-validation');
-            validateMessage('Please fill the required inputs')
+            return  validateMessage('Please fill the required inputs')
         } 
     }
-    const emailValue = adminEmailInput.value;
-
-    const adminFirstPassword = document.querySelector('.admin-first-password');
+   const emailValue = adminEmailInput.value;
+   const adminPhoneNumberInput = document.querySelector('.admin-phone-number-input')
+   
+   const adminFirstPassword = document.querySelector('.admin-first-password');
    const adminConfirmPassword = document.querySelector('.admin-confirm-password');
    
    if(adminFirstPassword.value !== adminConfirmPassword.value) {
-    validateMessage('Password match')
+    validateMessage('Password must match')
    } else if(adminFirstPassword.value == '' || adminConfirmPassword.value == '') {
     validateMessage('Provide a password');
-   } else {
-    validateMessage('Password is correct')
-   }
+   } else if(adminPhoneNumberInput.value.length >= 9) {
+    validateMessage('Phone number can not exceed 9 numbers')
+    } else {
+    return;
+    } 
+
 
     if(validateEmail(emailValue)) {
         return;
@@ -303,6 +306,7 @@ function validateAdminInputs() {
     function validateEmail (email) {
      return /\S+@\S+\.\S+/.test(email);
     }
+    
 }
 
 const validateMessage = (messageInfo) => {
@@ -314,7 +318,7 @@ const validateMessage = (messageInfo) => {
         document.querySelector('.admin-verification-message-content').classList.remove('close-admin-validation-message-container')
             document.querySelector('.admin-verification-message-container').style.display = 'none';
     }, 500);
-    }, 2000);
+    }, 3000);
 }
 
 
