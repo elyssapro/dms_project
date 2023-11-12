@@ -1,5 +1,5 @@
 <div class="box">
-    <div class="tab first-section">
+    <!-- <div class="tab first-section">
        <div class="admin-basic-info">
             <div class="admin-main-info">
                 <div class="skeleton skeleton-text"></div>
@@ -16,7 +16,7 @@
                 <button onclick="nextPrev(1)">Agree Terms & Condition</button>
             </div>
        </div>
-    </div>
+    </div> -->
     
     <div class="tab second-section">
         <div class="grid-second">
@@ -36,7 +36,7 @@
 
                 <div class="school-description">
                     <form>
-                        <textarea placeholder="Describe your school by giving the general introduction of your school"></textarea>              
+                        <textarea placeholder="Describe your school by giving the general introduction of your school" name="school-description"></textarea>              
                     </form>
 
                     <div class="school-profile-picture">
@@ -88,7 +88,7 @@
                 </div>
             </div>
 
-            <div class="min-tab min-second-tab" style="padding: 10px;">
+            <!-- <div class="min-tab min-second-tab" style="padding: 10px;">
                 
 
                 <input type="text" id="search-trades" placeholder="Search for trades or combination..." autofocus="true">
@@ -2614,10 +2614,10 @@
                 <button class="submit-class-form" onclick="next(1)">Submit</button>
 
 
-            </div>
+            </div> -->
 
             
-            <div class="min-tab min-third-tab" style="padding: 10px;">
+            <!-- <div class="min-tab min-third-tab" style="padding: 10px;">
                 
                
                 <div class="min-min-container school-basic-info">
@@ -2697,7 +2697,8 @@
                 <div class="min-min-container submit-school-basic-info">
                     <button class="submit-school-basic-info-button" onclick="next(1)">Next</button>
                 </div>
-            </div>
+            </div> -->
+            
             <div class="min-tab min-fouth-tab" style="padding: 10px;">
                 <div class="min-min-container school-basic-info">
                     <div class="school-basic-main-info school-basic-main-info-heading">
@@ -2732,7 +2733,12 @@
                             </div>
 
                             <div class="location-inputs-div">
-                                <input type="text"  class="location-input admin-add-info-input admin-gender-name-input" required="" value="">
+                                <!-- <input type="text"  class="location-input admin-add-info-input admin-gender-name-input" required="" value=""> -->
+                                <select id="admin-gender" class="location-input admin-add-info-input admin-gender-name-input">
+                                    <option></option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
                                 <label id="location-label">Gender</label>
                             </div>
     
@@ -2745,9 +2751,15 @@
                                 <input type="text"  class="location-input admin-add-info-input admin-email-input" required="" value="">
                                 <label id="location-label">Email</label>
                             </div>
-                            <div class="location-inputs-div">
-                                <input type="text"  class="location-input admin-add-info-input admin-phone-number-input" required="" value="">
-                                <label id="location-label">Phone number</label>
+                            <div class="location-inputs-div inputssss">
+                                <div style="display: flex; justify-content: center; align-items: center; height: 63.5%;width: 40%; margin-right: .125rem; font-weight: 500; border: 1px solid #aaa; border-radius: 3px; padding-left: 3px;">
+                                    <span class="iconify"></span>
+                                    +250
+                                </div>
+                                <div class="inputsss">
+                                    <input type="number"  class="location-input admin-add-info-input admin-phone-number-input" required="" value="">
+                                    <label id="location-label">Phone number</label>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2844,12 +2856,11 @@
             </div>
 
         </div>
-    </div>
-    <div class="tab">
-        
-    </div>
-    <div class="tab">
+        </div>
+        <div class="tab">
+            
+        </div>
+        <div class="tab">
         <p>this is the third tab</p>
     </div>
 </div>
-

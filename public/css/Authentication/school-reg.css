@@ -543,13 +543,22 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   margin: 0px 10px 0px 10px;
 }
 
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button{
+  display: none;
+}
+
+.inputssss{
+  display: flex;
+}
+
 .location-input {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid #aaa;
   outline: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   caret-color: #6084c3;
   
 }
@@ -698,12 +707,6 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   cursor: pointer;
 }
 
-.final-submit{
-  /* opacity: .5; */
-  /* cursor: not-allowed; */
-}
-
-
 
 
 .min-fouth-tab{
@@ -734,9 +737,28 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   padding: 10px;
 }
 
-.admin-add-info-input{
-  /* border: 1px solid red; */
+
+
+
+
+
+
+
+
+
+.selected-option {
+  justify-content: space-between;
+  align-items: center;
 }
+
+
+
+
+
+
+
+
+
 
 .invalid-admin-validation{
   border: 1.5px solid crimson;

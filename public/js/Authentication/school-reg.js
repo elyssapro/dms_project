@@ -1,3 +1,7 @@
+  
+
+
+
 var currentTab = 0;
 var currentMinTab = 0;
 
@@ -160,6 +164,7 @@ var acc = document.getElementsByClassName('accordion');
             }
         })
     }
+    
 
 
 const resultEl = document.querySelector('.admin-input-password');
@@ -268,17 +273,8 @@ function getRandomSymbols () {
 }
 
 
+
 function validateAdminInputs() {
-    const adminFirstPassword = document.querySelector('.admin-first-password');
-    const adminConfirmPassword = document.querySelector('.admin-confirm-password');
-
-    if(adminFirstPassword.value !== adminConfirmPassword.value) {
-    validateMessage('Password match')
-   } else {
-    return;
-   }
-    
-
     for(let i = 0; i < adminAddInfoInput.length; i++) {
         if(adminAddInfoInput[i].value == '') {
             adminAddInfoInput[i].classList.add('invalid-admin-validation');
@@ -287,17 +283,26 @@ function validateAdminInputs() {
     }
     const emailValue = adminEmailInput.value;
 
-   function validateEmail (email) {
-    return /\S+@\S+\.\S+/.test(email);
-   }
-
-   if(validateEmail(emailValue)) {
-    return;
+    const adminFirstPassword = document.querySelector('.admin-first-password');
+   const adminConfirmPassword = document.querySelector('.admin-confirm-password');
+   
+   if(adminFirstPassword.value !== adminConfirmPassword.value) {
+    validateMessage('Password match')
+   } else if(adminFirstPassword.value == '' || adminConfirmPassword.value == '') {
+    validateMessage('Provide a password');
    } else {
-       validateMessage('Please include an \'@\' and \' . \' in the email address to continue.');
+    validateMessage('Password is correct')
    }
 
-
+    if(validateEmail(emailValue)) {
+        return;
+    } else {
+        validateMessage('Please include an \'@\' and \' . \' in the email address to continue.');
+    }
+    
+    function validateEmail (email) {
+     return /\S+@\S+\.\S+/.test(email);
+    }
 }
 
 const validateMessage = (messageInfo) => {
