@@ -282,7 +282,8 @@ function validateAdminInputs() {
     }
    const emailValue = adminEmailInput.value;
    const adminPhoneNumberInput = document.querySelector('.admin-phone-number-input')
-   
+
+   const adminFirstnameInput = document.querySelector('.admin-firstname-input')
    const adminFirstPassword = document.querySelector('.admin-first-password');
    const adminConfirmPassword = document.querySelector('.admin-confirm-password');
    
@@ -294,6 +295,8 @@ function validateAdminInputs() {
     validateMessage( 'Message Validation', 'Phone number can not exceed 9 numbers')
     } else if(adminPhoneNumberInput.value.length < 9) {
         validateMessage( 'Message Validation', 'Phone number can not go below 9 numbers')
+    } else if(adminFirstPassword.value == adminFirstnameInput.value){
+        validateMessage('Password validation', 'Your password can not contain ' + '\'' + adminFirstnameInput.value + '\'')
     } else {
         bringProfileAnimation('Saving admin full profile information...', 'Registering your school in DMS...', "Saving your selected class and trades / combinations...", 'Creating your workspace...', 'Setting up your default features...', 'Activating your account...', 'Configuring your default settings...', 'Preparing your admin dashboard...', 'Ready to go...');
     }
