@@ -19,7 +19,7 @@ html{
     width: 100%;
     height: auto;
     max-height: 65px;
-    padding: 12px 40px;
+    padding: 6px 40px;
     box-shadow: rgba(0,0,0,0.3) 0px 0px 16px 0px;
     background-color: white;
 }
@@ -42,6 +42,8 @@ html{
 
 .dms-header-title{
     margin-right: 25%;
+    font-size: 30px;
+    font-weight: 550;
 }
 
 .dms-header-help{
@@ -64,7 +66,7 @@ html{
 
 #grand-main-body{
     width: 100%;
-    padding: 110px 10px 2500px;
+    padding: 110px 10px 20px;
     background-color: #dddddd6c;
     display: flex;
     align-items: center;
@@ -93,4 +95,31 @@ html{
     padding-left: 18px;
     margin-bottom: .5rem;
 }
+
+#grand-main-footer{
+    padding: 300px 300px 50px 300px;
+    background-color: #dddddd6c;
+}
+
+.grid-footer-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.contents ul{
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.contents h2{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;   
+}
+.contents ul li{
+    font-size: 13px;
+    color: #444;
+}
+
 
