@@ -36,6 +36,7 @@ app.set('view engine', 'ejs');
  */
 
 app.use('/Home', require('./Server/Routes/Home/home'));
+app.use('/Homepage', require('./Server/Routes/Grand/home'));
 app.use('/', require('./Server/Routes/Grand/grand'));
 app.use('/', require('./Server/Routes/Home/search-results'))
 app.use('/', require('./Server/Routes/Authentication/main'))

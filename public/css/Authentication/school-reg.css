@@ -13,12 +13,26 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+:root{
+  --mainBackgroundColor: #e2e2e244;  
+  --checkBoxChecked: lightslategray;
+  --mainBlueColor: rgb(0, 128, 255);
+  --mainBlueHoverColor: dodgerblue;
+  --mainBackgroundColorOuter: #dddddd6c;
+  --mainWhitebackgroundColor: white;
+  --mainBoxShadow: rgba(0,0,0,0.2) 1px 4px 10px 1px;
+  --MainBoxShadow: 1px 15px 30px 10px rgba(0, 0, 0, 0.10)
+  --mainBoxShadowHeader: rgba(0,0,0,0.3) 0px 0px 16px 0px;
+  --BoxShadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27); 
+}
+
 
 main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  /* background: linear-gradient(to right, #e2e2e2, #c9d6ff); */
+  background-color: var(--mainBackgroundColor);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -36,7 +50,7 @@ main {
   height: 640px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: -10px 60px 40px 20px rgba(0, 0, 0, 0.17);
+  box-shadow: 1px 15px 30px 10px rgba(0, 0, 0, 0.10);
   overflow: hidden;
   display: grid;
 }
@@ -137,7 +151,7 @@ main {
 
 .admin-description-info{
   padding: 5px;
-  background-color: #f1f1f1;
+  background-color: #e2e2e244;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 40px;
@@ -204,10 +218,6 @@ main {
   grid-template-rows: 2fr 4fr;
 }
 
-.grid-seconds{
-  background-color: #e2e2e2;
-  /* padding: 10px; */
-}
 
 .min-tab{
   display: none;
@@ -224,7 +234,8 @@ main {
 .min-first-tab{
   width: 100%;
   height: 100%;
-  background-color: hsl(100, 20%, 90%);
+  /* background-color: hsl(100, 20%, 90%); */
+  /* background-color: #e2e2e244; */
   padding: 10px;
 }
 
@@ -275,7 +286,7 @@ main {
   width: 350px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
 }
 .editor-panel .title{
   display: block;
@@ -418,17 +429,14 @@ main {
 .min-second-tab{
   width: 100%;
   height: 100%;
-  background-color: hsl(100, 20%, 90%);
+  background-color: var(--mainBackgroundColor);
 }
 
 #search-trades{
-  padding: 8px 10px;
-  border: 1px solid #6084c3;
-  /* box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.17); */
-  /* box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27); */
+  padding: 10px 10px;
+  border: 1px solid #aaa;
   border-radius: 3px;
   z-index: 99;
-  border: none;
   font-size: 16px;
 }
 
@@ -438,7 +446,7 @@ main {
 }
 
 .select-class-title{
-  font-weight: 550;
+  font-weight: 500;
 }
 
 
@@ -456,7 +464,7 @@ input.inputType{
 .formAnimation  label{
   display: block;
   padding: 10px;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  border: 1px solid #aaa;
   border-radius: 3px;
   background-color: white;
   margin-top: 5px;
@@ -466,7 +474,7 @@ input.inputType{
 
 
 input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label) {
- background-color: lightslategrey;
+ background-color: var(--checkBoxChecked);
  color: white;
 }
 
@@ -490,28 +498,23 @@ input[ type = 'checkbox']:checked +  label:not(#check-password-visibility-label)
   width: 100%;
   max-height: 540px;
   overflow: auto;
-  border-radius: 0px 0px 6px 6px;
+  border-radius: 0px 0px 3px 3px;
 }
 
 .ordinarySchool{
   position: relative;
   width: 100%;
   margin: 10px auto;
-  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-  border-radius: 4px;
   padding: 10px;
   background-color: white;
-  -webkit-animation-name: animate-form;
-  animation-name: animate-form;
-  -webkit-animation-duration: 1s;
-  animation-duration: .7s;
-  border-radius: 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 
 .submit-class-form{
   width: 50%;
-  margin: 1% auto;
+  margin: auto;
   padding: 5px;
   font-size: 1rem;
   background-color: #1474f1;

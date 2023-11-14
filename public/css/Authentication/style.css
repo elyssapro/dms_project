@@ -8,6 +8,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
+:root{
+  --mainBackgroundColor: #e2e2e244;  
+  --checkBoxChecked: lightslategray;
+  --mainBlueColor: rgb(0, 128, 255);
+  --mainBlueHoverColor: dodgerblue;
+  --mainBackgroundColorOuter: #dddddd6c;
+  --mainWhitebackgroundColor: white;
+  --mainBoxShadow: rgba(0,0,0,0.2) 1px 4px 10px 1px;
+  --MainBoxShadow: 1px 15px 30px 10px rgba(0, 0, 0, 0.10);
+  --mainBoxShadowHeader: rgba(0,0,0,0.3) 0px 0px 16px 0px;
+}
+
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -18,7 +30,7 @@ main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background: var(--mainBackgroundColorOuter);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -37,7 +49,7 @@ main {
   height: 640px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+  box-shadow: 0 60px 40px 10px rgba(0, 0, 0, 0.27);
   overflow: hidden;
 }
 
