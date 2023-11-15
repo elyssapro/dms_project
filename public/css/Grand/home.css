@@ -359,11 +359,30 @@ html{
 
   .contact-main-form input{
     padding: 8px 15px;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
     border: 1px solid #aaa;
     border-radius: 3px;
     font-size: 16px;
+    width: 100%;
   }
+
+.address-label {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -645px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.address-input:focus ~ .address-label,
+.address-input:valid ~ .address-label,
+.address-input:not([value=""]) ~ .address-label {
+    font-size: 15px;
+    margin-top: -15px;
+    margin-left: -660px;
+    background-color: white;
+    padding: 0 2px 0 2px;
+}
 
   .contact-main-form input:focus, .contact-main-form textarea:focus{
     border: none;
@@ -400,9 +419,29 @@ html{
     padding: 20px;
   }
 
+  .contact-main-address h3{
+    margin-bottom: .5rem;
+  }
+
+  .cont-address{
+    width: 100%;
+    height: auto;
+    display: grid;
+    
+  }
+
+  .address-dms{
+    display: flex;
+    margin-bottom: .8rem;
+  }
+
+  .address-dms img{
+    margin-right: .5rem;
+  }
+
 
 #grand-main-footer{
-    padding: 300px 300px 50px 300px;
+    padding: 50px 300px 50px 300px;
     background-color: var(--mainBackgroundColor);
 }
 
