@@ -295,8 +295,33 @@ html{
   .dms-unique-feature{
     background-color: var(--mainWhitebackgroundColor);
     box-shadow: var(--mainBoxShadow);
-    min-height: 300px;
+    /* min-height: 300px; */
+    height: auto;
     padding: 30px;
+  }
+
+  .dms-meet-team{
+    width: 100%;
+    height: auto;
+    background-color: var(--mainWhitebackgroundColor);
+    box-shadow: var(--mainBoxShadow);
+    padding: 30px;
+  }
+
+  .dms-meet-team h3{
+    margin-bottom: 1rem;
+  }
+
+  .dms-meet-team p{
+    margin-bottom: 1rem;
+  }
+
+  .dms-meet-team button{
+    background-color: var(--mainBlueColor);
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 3px;
   }
 #grand-main-footer{
     padding: 300px 300px 50px 300px;
