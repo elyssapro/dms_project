@@ -165,7 +165,7 @@ html{
 
   .dms-features{
     width: 100%;
-    min-height: 500px;
+    min-height: 400px;
     height: auto;
   }
 
@@ -188,9 +188,35 @@ html{
     border-radius: 4px;
     width: 100%;
     min-height: 220px;
-    padding: 30px;
+    padding: 50px;
   }
 
+  .dms-school-comparation{
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+  }
+
+  .school-before, .school-after{
+    background-color: var(--mainWhitebackgroundColor);
+    box-shadow: var(--mainBoxShadow);
+    padding: 20px;
+  }
+
+  .school-before h2, .school-after  h2{
+    text-align: center;
+    font-weight: 550;
+    margin-top: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .school-before p, .school-after  p{
+    margin-bottom: 1rem;
+  }
 #grand-main-footer{
     padding: 300px 300px 50px 300px;
     background-color: var(--mainBackgroundColor);
