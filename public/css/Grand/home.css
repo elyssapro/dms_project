@@ -241,6 +241,63 @@ html{
     border-radius: 4px;
     min-height: 300px;
   }
+
+  .dms-about-section{
+    width: 100%;
+    padding: 30px;
+  }
+
+  .dms-about-section h2{
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .dms-about-us{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .dms-welcome{
+    flex-grow: 1;
+  }
+
+  .dms-welcome-content{
+    flex-shrink: 0;
+    background-color: var(--mainWhitebackgroundColor);
+    box-shadow: var(--mainBoxShadow);
+    min-height: 400px;
+    width: 70%;
+    border-radius: 4px;
+    padding: 30px;
+  }
+
+  .dms-welcome-content p{
+    margin-bottom: 1rem;
+  }
+
+  .dms-about-features{
+    width: 100%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .dms-core-values{
+    background-color: var(--mainWhitebackgroundColor);
+    box-shadow: var(--mainBoxShadow);
+    min-height: 300px;
+    padding: 30px;
+  }
+
+  .dms-unique-feature{
+    background-color: var(--mainWhitebackgroundColor);
+    box-shadow: var(--mainBoxShadow);
+    min-height: 300px;
+    padding: 30px;
+  }
 #grand-main-footer{
     padding: 300px 300px 50px 300px;
     background-color: var(--mainBackgroundColor);
